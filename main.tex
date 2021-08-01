@@ -1,10 +1,12 @@
-\documentclass[11pt,a4paper,ngerman]{scrreprt}
+\documentclass[11pt,a4paper,english]{scrreprt}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{csquotes}\MakeOuterQuote{"}
-\usepackage[24hr]{datetime}
+
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[long,nodayofweek,level,24hr]{datetime} 
 \usepackage[skip=5pt,font=footnotesize]{caption}
+
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -34,14 +36,13 @@
 
 
 % DEF FOR COVER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\titelMA}{[Titel der Arbeit]}
-\newcommand{\titelMAEnglish}{[Titel der Arbeit auf Englisch]}
+\newcommand{\titelMAEnglish}{Explainable Artificial Intelligence:\\ Designing human-centric assessment system interfaces to increase explainability and trustworthiness of artificial intelligence in medical applications}
 
-\newcommand{\authorMA}{[Vorname Nachname des Studierenden]}
+\newcommand{\authorMA}{Philipp Dominik Bzdok}
 
-\newcommand{\examinerMA}{[Titel Vorname Nachname des Erstgutachters]}
+\newcommand{\examinerMA}{Univ.-Prof. Dr. rer. nat. Thomas Franke, Dipl.-Psych.}
 
-\newcommand{\supporterMA}{[Titel Vorname Nachname des Betreuers]}
+\newcommand{\supporterMA}{Tim Schrills, M.Sc.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % DEF FOR COMMENTS, CAN BE DELETED %%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,9 +63,9 @@
 \input{preamble}
 \tableofcontents
 
-\pagenumbering{arabic}
 \newpage
-\chapter{Einleitung}
+\pagenumbering{arabic}
+\chapter{Introduction}
 \begin{comment}
 \textbf{Abholen:} Leser abholen und in das Thema einführen, d.h. breit beginnen und dann zuspitzen auf die konkrete Anwendung, um die es geht.
 
@@ -75,7 +76,7 @@
 
 Text \dots
 
-\section{Ziele der Arbeit}
+\section{Goals}
 \begin{comment}
 \textbf{Konkretisieren:}Sie haben vor diesem Abschnitt gezeigt, worum es geht und warum es wichtig ist. Jetzt gehen Sie konkret auf die Ziele Ihrer Arbeit ein. Worum kümmern Sie sich und warum konkret das? Was haben Sie erreicht (Vergangenheitsform)?
 
@@ -84,7 +85,7 @@ Text \dots
 
 Text \dots
 
-\section{Stand der Technik}
+\section{State of the Art}
 \begin{comment}
 \textbf{Nur falls Sie auf einem bestehenden System aufbauen:} Falls Sie ein System bekommen haben, das Sie weiter entwickeln, dann stellen Sie hier da, was das System kann (verständlich formulieren), wie es aussieht / aufgebaut ist (Screenshots!) und ggfs. wie es umgesetzt wurde (z. B. Klassendiagramm).
 
@@ -93,7 +94,7 @@ Text \dots
 
 Text \dots
 
-\section{Vorgehensweise}
+\section{Approach}
 \begin{comment}
 \textbf{Einleitung als erste Schritt im menschzentrierten Gestaltungsprozess:} Die Vorgehensweise spiegelt im Prinzip das \textbf{Planen des menschzentrierten Gestaltungsprozesses wieder}. Das haben Sie im Exposé angefangen und hier (was dann tatsächlich gemacht wurde) überarbeitet dargestellt.
 
@@ -111,6 +112,9 @@ Text \dots
 
 Text \dots
 
+\section{Definition of Terms}
+Text \dots
+
 \clearpage
 \begin{comment}
 \begin{center}
@@ -124,7 +128,7 @@ Sie brauchen es erst \textbf{nach der ersten Iteration der Konzeption} wieder.
 \end{comment}
 
 \newpage
-\chapter{Analyse}
+\chapter{Analysis}
 \begin{comment}
 \textbf{Über das Verstehen und Festlegen des Nutzungskontexts zum Festlegen der Nutzungsanforderungen:} Das Ziel der Analyse besteht aus den ersten beiden Iterationsschritte des menschzentrierten Gestaltungsprozesses: das \textbf{Verstehen und Festlegen des Nutzungskontexts}, was am Ende der Analyse im \textbf{Festlegen der Nutzungsanforderungen} mündet.
 
@@ -145,7 +149,7 @@ Wenn Sie die richtige argumentative Reihenfolge haben, können Sie die Analyse (
 Häufig wird die Analyse allerdings dadurch erschwert, dass Sie unterschiedliche Probleme/Aufgaben haben, die von unterschiedlichen Benutzer(klassen) unter unterschiedlichen räumlichen und zeitlichen Bedingungen unter unterschiedlichen organisationalen Bedingungen ausgeführt werden (vgl. im Gegensatz zu der sehr speziellen eindeutige App für Depressionspatienten im klinischen Kontext z. B. ein allgemeines Programm wie Microsoft Word, das von einer sehr heterogenen Nutzergruppen verwendet wird).
 \end{comment}
 
-\section{Datenquellen}
+\section{Data Sources}
 \begin{comment}
 In Ihre Analyse verwenden Sie wahrscheinlich die selben Datenquellen (z. B. wissenschaftliche Literatur, bestehende Apps, Experteninterviews, Nutzerbefragungen, etc.) in mehreren Unterkapiteln. Hier können Sie diese Quellen kurz beschreiben um sie in den folgenden Unterkapiteln verwenden zu können. Das macht nur dann Sinn, wenn Sie die Daten auch wirklich in mehreren Unterkapiteln verwenden. Wenn Sie z. B. bestehende Apps nur in der Problemanalyse verwendet haben, dann das Vorgehen auch nur dort beschreiben (wäre allerdings was merkwürdig, wenn Ihnen die Apps nicht auch was über die anvisierten Nutzer sagen würde).
 
@@ -169,7 +173,7 @@ Insbesondere die Literaturrecherche wird häufig unterschätzt. Es macht einfach
 
 Text \dots
 
-\section{Problemanalyse}
+\section{Problem Analysis}
 \begin{comment}
 Problem- und Aufgabenanalyse wird häufig kombiniert, können aber auch in zwei separate Unterkapitel aufgeteilt werden.
 
@@ -178,14 +182,14 @@ Problem- und Aufgabenanalyse wird häufig kombiniert, können aber auch in zwei 
 
 Text \dots
 
-\section{Aufgabenanalyse}
+\section{Task Analysis}
 \begin{comment}
 \textbf{Aufgabenanalyse:} Welche Aufgaben sollen die Benutzer/innen (besser) ausführen können? Wodurch sind diese gekennzeichnet? Bei kleineren klar definierten Aufgaben bieten sich z. B. HTAs an. Nehmen Sie in der weiteren Arbeit explizit Bezug auf die Aufgaben und die durch die Entwicklung neu vorhandenen Möglichkeiten bzw. bessere Durchführung.
 \end{comment}
 
 Text \dots
 
-\section{Benutzeranalyse}
+\section{User Analysis}
 \begin{comment}
 Wer sind die Benutzer/innen Ihrer Entwicklung? Beschreiben Sie die Benutzergruppen oder Benutzerklassen. In \textbf{seltenen(!)} Fällen können sich Personas eignen (sind eher ein Kommunikationstool im Team). Die Zielgruppe müssen Sie im Verlauf Ihrer weiteren Arbeit immer wieder explizit einbinden — nutzen Sie sie um Ihre Gestaltungslösungen immer wieder an deren Eigenschaften zu messen. In Konzeption, Realisierung, und Evaluation muss deutlich werden, dass Sie spezifisch für diese Personen und ihre Besonderheiten entwickelt haben.
 
@@ -194,7 +198,7 @@ Teilen Sie unterschiedliche Benutzerklassen in Unterabschnitte auf, z. B. "2.4.1
 
 Text \dots
 
-\section{Kontextanalyse}
+\section{Context Analysis}
 \begin{comment}
 Der Kontext bezieht sich auf den \textbf{räumlichen} und \textbf{zeitlichen Kontext}, in dem Ihre Entwicklung eingesetzt wird (z. B. \textbf{Informations-Website:} auf Desktop-Computern, Notebooks und Mobilgeräten sowohl zu Hause als auch unterwegs und zu jeder Uhrzeit vs. S\textbf{achbearbeitungssoftware in der öffentlichen Verwaltung:} auf Arbeitsplatz-Computern, im Büro, zwischen 9 und 17 Uhr) Aus diesen Kontexten ergeben sich unterschiedliche Nutzungsanforderungen, die für die Konzeption relevant sind. Beziehen Sie diese Informationen bei der weiteren Entwicklung explizit mit ein.
 
@@ -203,7 +207,7 @@ Wenn Sie Aussagen über den Kontext machen, dann legen Sie auch Ihre Quellen off
 
 Text \dots
 
-\section{Organisationsanalyse}
+\section{Organisational Analysis}
 \begin{comment}
 Hier geht es um den \textbf{organisationalen Kontext}, also z. B. um Hierarchien, Abhängig-keiten zwischen den Nutzern/innen und anderen Personen/Organisationen, Rechte in Unternehmen, und andere Rahmenbedingungen, die Sie berücksichtigen müssen.
 
@@ -216,7 +220,7 @@ Auch hier: Nehmen Sie auf diese Punkte explizit in der weiteren Entwicklung Bezu
 
 Text \dots
 
-\section{Fazit zur Analyse}
+\section{Conclusion on the Analysis}
 \begin{comment}
 Stellen Sie zum Ende der Analyse in einem eigenen Fazit mit eigener Gewichtung die zentralen Inhalte der Analyse kurz dar. Zur Unterstützung kann eine Tabelle mit einer Priorisierung der Nutzungsanforderungen verwendet werden. Sie legen \textbf{auf Basis der Analyse} begründet fest, welche Nutzungsanforderungen:
 
@@ -235,7 +239,7 @@ Falls bei der Festlegung der Nutzungsanforderungen viel Entscheidungsspielraum v
 Text \dots
 
 \newpage
-\chapter{Konzeption}
+\chapter{Conception}
 \begin{comment}
 Die \textbf{Konzeption muss klar aus der Analyse folgen}. Sie können und sollten kreative Lösungen erarbeiten, aber Sie müssen dabei wirklich kreativ sein. Sprich: \textbf{Absichtlich etwas Erschaffen, was neu und nützlich ist}. Machen Sie deutlich wie Ihre kreative Lösung die Punkte aus der Analyse aufgreift und löst. Also nicht: "Jetzt habe ich die Pflicht-Analyse gemacht, kann's abhaken, und mich frei entfalten." Die Analyse liefert die \textbf{Legobausteine} und den \textbf{Rahmen} (Bodenplatte) für die Konzeption — die müssen Sie nutzen. Sie können natürlich iterativ die ihr Verständnis des Nut-zungskontextes erweitern und die Nutzungsanforderungen updaten!
 
@@ -278,7 +282,7 @@ Die Konzeption \textbf{kann unterschiedlich aufgebaut sein} und \textbf{nicht al
 
 Text \dots
 
-\section{Konzeptionsvorgehen}
+\section{Conceptual Approach}
 \begin{comment}
 Die Konzeption verläuft — noch stärker als die Analyse — iterativ. Die Unterkapitel sind allerdings linear strukturiert. Vergleichbar mit den Datenquellen der Analyse bietet sich das erste Unterkapitel an, das Vorgehen und die eingesetzten Methoden zu beschreiben (deren Ergebnisse sich meist in mehreren Unterkapitel niederschlagen).
 
@@ -297,21 +301,21 @@ In den folgenden Unterkapitel können Sie dann auf 3.1 verweisen.
 
 Text \dots
 
-\section{Anwendungsfälle (Use Cases)}
+\section{Use Cases}
 \begin{comment}
 Use Cases bieten sich an, die Ergebnisse aus der Analyse zusammenzufassen und in einen oder mehrere konkrete Anwendungsfälle zu übertragen. Die Tabelle mit den Nutzungsanforderungen sollte hierbei helfen. Wie sieht die Situation aus, wenn Ihr System eingesetzt wird? Bei den Anwendungsfällen noch nicht zu spezifisch werden. Es geht primär darum zu beschrieben, was die Person macht, z. B. veränderte Arbeitsabläufe, neue Funktionen, etc., noch nicht wie genau dies (technisch, womit realisiert) umgesetzt wird.
 \end{comment}
 
 Text \dots
 
-\section{Funktionalitäten}
+\section{Functionalities}
 \begin{comment}
 Geben Sie einen Überblick über die geplanten Funktionalitäten des Systems. Dazu können Sie die Anwendungsfälle der Konzeption sowie die Tabelle mit den Nutzungsanforderungen aus der Analyse aufgreifen und den Anforderungen mögliche Funktionalitäten zuordnen. Priorisieren Sie dann diese Funktionalitäten — bezüglich Auswirkungen auf die Gebrauchstauglichkeit des Systems und Umsetzbarkeit dieser Funktionen.
 \end{comment}
 
 Text \dots
 
-\section{Systemarchitektur}
+\section{System Architecture}
 \begin{comment}
 Mit den Funktionalitäten gehen bestimmte Anforderungen an das zugrundeliegende System einher. Stellen Sie hier dar, welche Lösungen es für die Systemarchitektur gibt, welche Aufteilungen sich eignen (z. B. MVC) und wie man es umsetzen könnte. Je nach Detailgrad bieten sich u.a. UML-Diagramme an.
 
@@ -324,7 +328,7 @@ Mit den Funktionalitäten gehen bestimmte Anforderungen an das zugrundeliegende 
 
 Text \dots
 
-\section{Interfacedesign}
+\section{Interface Design}
 \begin{comment}
 Wie können die Informationen dargeboten und Angaben der Nutzer erfolgen?
 
@@ -355,7 +359,7 @@ BTW, dieser Hinweis heißt nicht, dass Sie komplett naiv an Ihre Gestaltung hera
 \end{center}
 \end{comment}
 
-\section{Fazit der Konzeption}
+\section{Conclusion on the Conception}
 \begin{comment}
 Wie auch bei der Analyse am Ende der Konzeption ein kurzes Fazit um den Entwicklungsprozess zusammenzufassen und begründen, was die erfolgversprechendste Lösung (höchste Gebrauchstauglichkeit in der formativen Evaluation!) für die Realisierung ist.
 \end{comment}
@@ -363,7 +367,7 @@ Wie auch bei der Analyse am Ende der Konzeption ein kurzes Fazit um den Entwickl
 Text \dots
 
 \newpage
-\chapter{Realisierung}
+\chapter{Implementation}
 \begin{comment}
 Beschreiben Sie, wie Sie das Projekt konkret realisiert haben, mit dem Ziel, anderen (Medien-)Informatikern zu erlauben, Ihre Anwendung weiter zu entwickeln.
 
@@ -390,21 +394,21 @@ Weiterer Grund: Wenn Sie zuerst die konkrete Software sagen, dann fangen Persone
 
 Text \dots
 
-\section{Realisierung der Systemarchitektur}
+\section{System Architecture Implementation}
 \begin{comment}
 vgl. Konzeption, jetzt aber wie und womit es konkret umgesetzt wurde (u.U. bieten sich UML-Diagramme an)
 \end{comment}
 
 Text \dots
 
-\section{Realisierung des Interfaces}
+\section{Interface Implementation}
 \begin{comment}
 vgl. Konzeption, jetzt aber wie und womit es konkret umgesetzt wurde 
 \end{comment}
 
 Text \dots
 
-\section{Fazit zur Realisierung}
+\section{Conclusion on the Implementation}
 \begin{comment}
 Kurzes Fazit, das u.a. die Frage beantwortet, was technisch konkret umgesetzt wurde und was z. B. aus der Konzeption übrig geblieben ist und warum.
 \end{comment}
@@ -412,7 +416,7 @@ Kurzes Fazit, das u.a. die Frage beantwortet, was technisch konkret umgesetzt wu
 Text \dots
 
 \newpage
-\chapter{Dialogbeispiele}
+\chapter{Dialogue Samples}
 \begin{comment}
 Verdeutlichen Sie die Funktionsweise Ihre Entwicklung bei einer typischen Bedienung (z. B. wie in einem Anwendungsbeispiel / Use Case beschrieben — auf den können Sie sich ja beziehen).
 
@@ -433,7 +437,7 @@ Geben Sie zu Beginn der Evaluation einen kurzen Überblick über Ihr Vorgehen. D
 
 Text \dots
 
-\section{Ziel}
+\section{Goal}
 \begin{comment}
 Die summative Evaluation ist eine abschließende Bewertung Ihrer Entwicklung. Ziel ist, unter dem Strich zu sehen, wie gebrauchstauglich Ihr System ist (nicht mehr eine iterative Verbesserung wie in der formativen Evaluation der Konzeption). Da-für müssen Sie klare Kriterien ableiten, was eine "gute" bzw. "schlechte" Bewertung nach sich ziehen würde. Meist sind das die klassischen Gebrauchstauglichkeitskriterien (Effektivität, Effizienz, Erlernbarkeit, Zufriedenstellung), wobei diese über das Ziel Ihrer Anwendung konkretisiert werden (Effektivität bei einer Lernapp ist konkret gemessen etwas anderes als Effektivität bei einem digitalen Depressionstagebuch).
 
@@ -442,7 +446,7 @@ Hier verdeutlichen Sie entsprechend, welche Fragen die Evaluation beantworten so
 
 Text \dots
 
-\section{Methode}
+\section{Methods}
 \begin{comment}
 Im Methodenteil zeigen Sie, was wie evaluiert wurde. Der Methodenteil muss anderen Entwicklern die Möglichkeit geben, Ihr Evaluationsvorgehen zu wiederholen um Ihre Ergebnisse zu überprüfen. 
 \end{comment}
@@ -456,7 +460,7 @@ Kurze Beschreibung des Versuchs- oder Evaluationsdesigns, dass man das Vorgehen 
 
 Text \dots
 
-\subsection{Teilnehmer}
+\subsection{Participants}
 \begin{comment}
 Kurze Beschreibung der Teilnehmer mit relevanten Angaben. In jedem Fall die Anzahl, oft noch Geschlecht, Alter, Beruf, Vorerfahrung, etc. Bei weniger als zehn Teilnehmern bietet sich eine Tabelle zur schnellen Übersicht an. Verweisen Sie bei individuellen Ergebnissen (z.B. Zitaten aus Fragebögen oder Interviews) auf die Teilnehmer-Nummer.
 
@@ -465,7 +469,7 @@ Achtung: Niemals die Namen der Teilnehmer erwähnen! Die Teilnehmer stehen stell
 
 Text \dots
 
-\subsection{Setting und Instrumente}
+\subsection{Setting and Instruments}
 \begin{comment}
 Beschreiben Sie die notwendigen Materialien bei der Evaluation. Dazu gehört — mit Überschriften klar ausgewiesen — das Setting (wo wurde die Evaluation durchgeführt), Ihre Entwicklung (Verweis auf Dialogbeispiele), und Ihre Erhebungsmethoden (Fragebögen, Interviewleitfäden, etc.).
 
@@ -483,7 +487,7 @@ Text \dots
 \paragraph{Fragebögen}\mbox{} \\
 Text \dots
 
-\subsection{Prozedur}
+\subsection{Procedure}
 \begin{comment}
 Beschreiben Sie chronologisch den Ablauf der Evaluation, von der Begrüßung bis zur Verabschiedung. Verweisen Sie dabei auf die anderen Abschnitte (v.a. Setting und Instrumente) und führen Sie nichts Neues mehr ein. Dieser Abschnitt ist der einzige Abschnitt, in dem Sie die zeitliche Reihenfolge klar einhalten müssen, alle anderen sind inhaltlich strukturiert.
 \end{comment}
@@ -494,7 +498,7 @@ Text \dots
 Nach dem Lesen der Methode muss deutlich geworden sein, wie Sie Ihre Evaluationsfragen messbar gemacht haben. Wie haben Sie z.B. Benutzerzufriedenheit oder Effizienz gemessen? Die Leser müssen sich aufgrund des Methodenteils in die Lage der Teilnehmer versetzen können und ein mentales Modell Ihrer Evaluation bilden können.
 \end{comment}
 
-\section{Ergebnisse}
+\section{Results}
 \begin{comment}
 In den Ergebnissen zeigen Sie wie die Ergebnisse analysiert wurden um Ihre Evaluationsfragen zu beantworten. Nicht einfach die Daten auflisten, sondern stellen Sie die Ergebnisse strukturiert dar und betonen Sie die wichtigen Aspekte. Gliedern Sie die Ergebnisse nach Ihren Forschungsfragen / Fragestellungen (nicht zeitlich oder nach Erhebungsmethoden wie Fragebögen vs. Beobachtung). Zu Beginn (falls relevant) sollten Sie überprüfen, ob die Anwendung auch wirklich so verwendet wurde, wie sie verwendet werden sollte (manipulation check). Haben die Personen also z. B. wirklich die Aufgaben mit der App gelöst oder haben sie die App schnell beiseite gelegt.
 
@@ -515,7 +519,7 @@ Am Ende des Ergebnis-Abschnitts muss deutlich geworden sein, wie Ihre Entwicklun
 
 Text \dots
 
-\section{Diskussion}
+\section{Discussion}
 \begin{comment}
 In der Diskussion erklären und interpretieren Sie die Ergebnisse. Welche Schlussfolgerungen ziehen Sie daraus? Was sind die praktischen Konsequenzen für die (weitere) Entwicklung? Hier dürfen Sie selbst die Ergebnisse bewerten — auf Basis von einer kritischen Reflektion.
 In der Diskussion keine neuen Ergebnisse aus der Analyse / Evaluation / etc. einführen. Die Beweisaufnahme ist mit Ende des Ergebnisteils abgeschlossen. Es geht hier auch nicht um eine Mystery-Geschichte mit Spannungsbogen, sondern um klar nachvollziehbare Argumente. Neue Informationen aus der Literatur verwenden um die (v.a. überraschende) Ergebnisse zu interpretieren ist dagegen möglich.
@@ -523,7 +527,7 @@ In der Diskussion keine neuen Ergebnisse aus der Analyse / Evaluation / etc. ein
 
 Text \dots
 
-\section{Fazit zur Evaluation}
+\section{Conclusion on the Evaluation}
 \begin{comment}
 Fassen Sie die Evaluation kurz zusammen — insbesondere was die zentralen Ergebnisse waren. Unterm Strich: Wie gut hat's geklappt?
 \end{comment}
@@ -531,14 +535,14 @@ Fassen Sie die Evaluation kurz zusammen — insbesondere was die zentralen Ergeb
 Text \dots
 
 \newpage
-\chapter{Zusammenfassung und Ausblick}
+\chapter{Summary and Outlook}
 \begin{comment}
 Kurze Einführung, was in den folgenden Unterkapiteln behandelt wird.
 \end{comment}
 
 Text \dots
 
-\section{Zusammenfassung}
+\section{Summary}
 \begin{comment}
 Fassen Sie die zentralen Schritte und Ergebnisse Ihrer Arbeit kurz zusammen. Personen mit wenig Zeit müssen aus dieser Darstellung die Kernpunkte Ihrer Arbeit mit-nehmen und Ihren Arbeitsaufwand und Erfolg bewerten können.
 
@@ -547,7 +551,7 @@ Ist ähnlich wie die Zusammenfassung zu Beginn der Arbeit, aber etwas länger (1
 
 Text \dots
 
-\section{Offene Punkte}
+\section{Outstanding Issues}
 \begin{comment}
 \textbf{Offene Punkte = Versprochene aber nicht umgesetzte Punkte:} Falls Schritte explizit geplant wurden (Exposé! Pflichtenheft!), aber nicht realisiert werden konnten, dann diese hier klar darstellen und diskutieren.
 
@@ -556,7 +560,7 @@ Mögliche Features, die Sie nicht vor Beginn versprochen haben, gehören in den 
 
 Text \dots
 
-\section{Ausblick}
+\section{Outlook}
 \begin{comment}
 Ideen, welche weiteren Entwicklungen oder Untersuchungen folgen sollten, oder was man noch umsetzen könnte, gehören in den Ausblick.
 
@@ -567,7 +571,7 @@ Bitte keine Allgemeinheiten ("können noch Features hinzugefügt werden" oder "k
 
 Text \dots
 
-\section{Abschließendes Fazit}
+\section{Final Conclusion}
 \begin{comment}
 Die Arbeit, die Ergebnisse und weitere mögliche Schritte kurz kritisch (ehrlich und konstruktiv, aber nicht selbstkreuzigend) reflektieren und positiv enden. Maximal eine halbe bis 3/4 Seite.
 Ist kurz und hier können Sie von der Arbeit zurücktreten und auch den Leser aus dem Text ziehen.
