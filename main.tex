@@ -103,7 +103,45 @@ Concretely the product enables users to perform following tasks for AI models wo
     \item [Data-centric analysis:] Generative models perform a probabilistic analysis of the underlying data allowing for robust outliers detection and uncertainty analysis. This information can help you to evaluate data quality.
     \item [Centralised tracking system:] AI Control Room acts as a centralised tracking system to store lineage, versioning, and metadata of your datasets and models. Assessments generated are securely persisted along with models and datasets.
 \end{description}
-\todo{Show screenshots of current platform}
+
+Besides general information and standard metrics (see figure \ref{fig:model_assessment_overview}) the assessment system offers varied insights into different aspects of the machine learning model: Figure \ref{fig:model_assessment_graphs} shows graphs of training and validation precision, recall and calibration, while figure \ref{fig:model_assessment_analysis} shows the models strong points and limitations by analyzing the feature distribution in the data. Furthermore, the second half of the model assessment focuses more on the interpretability aspect of machine learning: Figure \ref{fig:model_assessment_interpret} shows a confusion matrix of possible classification results, which is then extended by example data points, chosen by the assessment system (see figure \ref{fig:model_assessment_examples}). These examples can then be further explored to generate understanding of the models inner workings by applying an attribution based explanation technique combined with a decision rule explanation.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_overview.png}
+    \caption{AI Control Room - Model Assessment Overview with Standard Metrics}
+    \label{fig:model_assessment_overview}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_graphs.png}
+    \caption{AI Control Room - Precision-Recall and Calibration Graphs}
+    \label{fig:model_assessment_graphs}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_analysis.png}
+    \caption{AI Control Room - Model String Points and Limitations}
+    \label{fig:model_assessment_analysis}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_interpret.png}
+    \caption{AI Control Room - Interpretability Assessment}
+    \label{fig:model_assessment_interpret}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_examples.png}
+    \caption{AI Control Room - Example Data}
+    \label{fig:model_assessment_examples}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/model_assessment_explanation.png}
+    \caption{AI Control Room - Prediction Explanation for Examples Data}
+    \label{fig:model_assessment_explanation}
+\end{figure}
+\clearpage
 
 \section{Approach}
 \begin{comment}
