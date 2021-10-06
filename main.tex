@@ -66,12 +66,12 @@
 
 \newpage
 \pagenumbering{arabic}
-\chapter{Introduction}
+\chapter{Introduction}\label{chapter:introduction}
 The use of modern Artificial Intelligence (\textbf{AI}) techniques is pervasive and can be found in many fields of application, such as digital image processing, search engines and speech recognition \parencite{eu_com_ai}. Other application fields, such as medical diagnosis systems, cannot benefit as easily from AI-based technology compared to recreational domains. This impediment stems oftentimes from the AI being a "black box". In consequence humans struggle to understand such AI-systems and their output, leading to trust and compliance issues \parencite{adadi_blackbox_2018}. These issues are further enhanced in the medical context where decisions, possibly based on AI, can have severe consequences for users, especially patients.
 
 An example for medical human-AI-interaction is the image-based recognition of Deep Vein Thrombosis (\textbf{DVT}) with real time AI support for medical professionals by \textit{Think\-Sono}. The system leverages AI to guide the user through the current gold-standard diagnosis, a compression ultrasound examination, so that it enables any healthcare professional to detect DVT \parencite{thinksono_website}. Closely related in this context is the interdisciplinary research project \textit{CoCoAI}, which aims to explore psychological, ethical and technological implications of human-centered, AI-based applications in the DVT diagnosis and beyond \parencite{cocoai_website}. 
 
-When AI-based systems are used in high risk application contexts, such as medical diagnosis, the aspects of explainability, interpretability and trustworthiness become a primary concern for adoption and use of said system. \textcite{ribeiro_why_2016} already explored the importance of explainability and trust in AI-based systems and postulated that AI systems will not be used if the users have no trust in the model or the results. Understanding the AI's underlying machine learning (\textbf{ML}) model and its predictions is an important step for assessing trust \parencite{ribeiro_why_2016}. Recent technological advances are realized by \textit{Clearbox AI}, with the focus on trustworthy AI by implementing an AI model assessment \parencite{clearbox_website, eu_trustworthy_ai}. The model assessment can help model owners to identify robustness issues, potential undesired behaviour, and explain errors and uncertainties regarding the model predictions \parencite{clearbox_wp}.
+When AI-based systems are used in high risk application contexts, such as medical diagnosis, the aspects of explainability, interpretability and trustworthiness become a primary concern for adoption and use of said system. \textcite{ribeiro_why_2016} already explored the importance of explainability and trust in AI-based systems and postulated that AI systems will not be used if the users have no trust in the model or the results. Even though many machine learning algorithms score high on standard performance metrics, such as precistion, recall or Area Under the Receiver Operating Characteristics (\textbf{AUROC}), user-facing performance may be way worse \parencite{gordon_disagreement_2021}. Understanding the AI's underlying machine learning (\textbf{ML}) model and its predictions is an important step for assessing trust and facilitating effective interaction \parencite{ribeiro_why_2016}. Recent technological advances are realized by \textit{Clearbox AI}, with the focus on trustworthy AI by implementing an AI model assessment \parencite{clearbox_website, eu_trustworthy_ai}. The model assessment can help model owners to identify robustness issues, potential undesired behaviour, and explain errors and uncertainties regarding the model predictions \parencite{clearbox_wp}.
 
 Trust in AI systems is primarily induced by the users' understanding and the general interpretability of the machine learning model and their predictions \parencite{ribeiro_why_2016, ras_explanation_2018}. The wide array of different possible user groups and the complex constructs of understandability and trust demands for a human-centric approach in designing AI assessment systems. Because of the inherent complexity of non-linear machine learning models, especially Deep Neural Networks (\textbf{DNNs}) for image processing, suitable visualization and communication techniques are non-trivial. Additionally to the complex models for image classification, the input data is also more complex as it is unstructured. Non-linear neural networks and unstructured data provide additional challenges for Explainable Artificial Intelligence (\textbf{XAI}), as described in \textcite{keane_how_2019}. XAI is a research field that studies how AI decisions and data driving those decisions can be explained to people in order to provide transparency, enable assessment of accountability, demonstrate fairness, or facilitate understanding \parencite{arrieta_explainable_2019}. XAI plays an important role in the acceptance and finally in the usage of AI-based technology. This is further underlined in the medical context where public authorities set strict regulations on the usage of technological systems and ethic concerns have to be thoughtfully addressed.
 
@@ -104,7 +104,7 @@ Concretely the product enables users to perform following tasks for AI models wo
     \item [Centralised tracking system:] AI Control Room acts as a centralised tracking system to store lineage, versioning, and metadata of your datasets and models. Assessments generated are securely persisted along with models and datasets.
 \end{description}
 
-Besides general information and standard metrics (see figure \ref{fig:model_assessment_overview}) the assessment system offers varied insights into different aspects of the machine learning model: Figure \ref{fig:model_assessment_graphs} shows graphs of training and validation precision, recall and calibration, while figure \ref{fig:model_assessment_analysis} shows the models strong points and limitations by analyzing the feature distribution in the data. Furthermore, the second half of the model assessment focuses more on the interpretability aspect of machine learning: Figure \ref{fig:model_assessment_interpret} shows a confusion matrix of possible classification results, which is then extended by example data points, chosen by the assessment system (see figure \ref{fig:model_assessment_examples}). These examples can then be further explored to generate understanding of the models inner workings by applying an attribution based explanation technique combined with a decision rule explanation.
+Besides general information and standard metrics (see \autoref{fig:model_assessment_overview}) the assessment system offers varied insights into different aspects of the machine learning model: \autoref{fig:model_assessment_graphs} shows graphs of training and validation precision, recall and calibration, while \autoref{fig:model_assessment_analysis} shows the models strong points and limitations by analyzing the feature distribution in the data. Furthermore, the second half of the model assessment focuses more on the interpretability aspect of machine learning: \autoref{fig:model_assessment_interpret} shows a confusion matrix of possible classification results, which is then extended by example data points, chosen by the assessment system (see \autoref{fig:model_assessment_examples}). These examples can then be further explored to generate understanding of the models inner workings by applying an attribution based explanation technique combined with a decision rule explanation.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{img/screenshots/model_assessment_overview.png}
@@ -144,22 +144,15 @@ Besides general information and standard metrics (see figure \ref{fig:model_asse
 \clearpage
 
 \section{Approach}
-\begin{comment}
-\textbf{Einleitung als erste Schritt im menschzentrierten Gestaltungsprozess:} Die Vorgehensweise spiegelt im Prinzip das \textbf{Planen des menschzentrierten Gestaltungsprozesses wieder}. Das haben Sie im Exposé angefangen und hier (was dann tatsächlich gemacht wurde) überarbeitet dargestellt.
+As already described in the introduction of \autoref{chapter:introduction}, many machine learning algorithms score high on standard performance metrics, but user-facing performance may be way worse \parencite{gordon_disagreement_2021}. This issue is caused by real world applications being very dependent on the actual human-AI-interaction. Following this reasoning, it lends itself to utilize a human-centered design process for creating AI-assessment systems. \autoref{fig:DIN_EN_ISO_9241} shows a standardized process of human-centered design, which was applied in this thesis to conceptualize, implement and evaluate assessment system artifacts. The key take-away is the inclusion of human aspects in all stages of the process. Research on evaluation of AI explanations revealed that there is a big gap between the perceived and actual usefulness of explanations, as described by \textcite{ras_explainable_2021}. This further underlines the need for a human-centered approach in designing AI-assessment-systems.
 
-\textbf{Vorgehen:} Wie sind Sie vorgegangen, um die Ziele der Arbeit zu erreichen? Oft (aber nicht immer!) bietet sich das Diagramm aus der DIN EN ISO 9241-210 an (wenn Sie hier eine Abbildung verwenden, dann müssen Sie sich auch an das Vorgehen gehalten haben!).
-
-\textbf{Orientierung im Bericht:} Wo findet der Leser die Ergebnisse der einzelnen Schritte und was beinhalten diese (kurz halten!)? Verweise auf Folgekapitel am besten im Stil "werden in der Analyse (Kapitel 2) ..." statt "in Kapitel 2 wird ..." — das Vorgehen gibt die Kapitel vor, nicht umgekehrt.
-\end{comment}
-
+The thesis' structure will reflect the human-centered approach, which is visualized in \autoref{fig:DIN_EN_ISO_9241}: As already alluded in \autoref{chapter:introduction}, \autoref{chapter:analysis} is about understanding and setting the context of use. The following \autoref{chapter:conception} deals with determining the requirements for use by conducting literature research and user interviews. Based on the established requirements the development of solutions will be described in \autoref{chapter:implementation}, while \autoref{chapter:evaluation} is about the evaluation of the solutions. This general process is embedded in a iterative loop, where intermediate results are evaluated against the requirements and subject to change.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{img/Picture1.png}
-    \caption{Menschzentrierter Gestaltungsprozess \parencite{DIN}}
-    \label{fig:picture1}
+    \includegraphics[width=\textwidth]{img/figures/DIN_EN_ISO_9241-210.png}
+    \caption{Human-centered Design Process \parencite{DIN}}
+    \label{fig:DIN_EN_ISO_9241}
 \end{figure}
-
-Even though many machine learning algorithms score high on standard performance metrics, such as precistion, recall or Area Under the Receiver Operating Characteristics (\textbf{AUROC}), user-facing performance may be way worse \parencite{gordon_disagreement_2021}. \todo{Describe process}
 
 \section{Definition of Terms}
 Text \dots
@@ -177,7 +170,7 @@ Sie brauchen es erst \textbf{nach der ersten Iteration der Konzeption} wieder.
 \end{comment}
 
 \newpage
-\chapter{Analysis}
+\chapter{Analysis}\label{chapter:analysis}
 \begin{comment}
 \textbf{Über das Verstehen und Festlegen des Nutzungskontexts zum Festlegen der Nutzungsanforderungen:} Das Ziel der Analyse besteht aus den ersten beiden Iterationsschritte des menschzentrierten Gestaltungsprozesses: das \textbf{Verstehen und Festlegen des Nutzungskontexts}, was am Ende der Analyse im \textbf{Festlegen der Nutzungsanforderungen} mündet.
 
@@ -288,7 +281,7 @@ Falls bei der Festlegung der Nutzungsanforderungen viel Entscheidungsspielraum v
 Text \dots
 
 \newpage
-\chapter{Conception}
+\chapter{Conception}\label{chapter:conception}
 \begin{comment}
 Die \textbf{Konzeption muss klar aus der Analyse folgen}. Sie können und sollten kreative Lösungen erarbeiten, aber Sie müssen dabei wirklich kreativ sein. Sprich: \textbf{Absichtlich etwas Erschaffen, was neu und nützlich ist}. Machen Sie deutlich wie Ihre kreative Lösung die Punkte aus der Analyse aufgreift und löst. Also nicht: "Jetzt habe ich die Pflicht-Analyse gemacht, kann's abhaken, und mich frei entfalten." Die Analyse liefert die \textbf{Legobausteine} und den \textbf{Rahmen} (Bodenplatte) für die Konzeption — die müssen Sie nutzen. Sie können natürlich iterativ die ihr Verständnis des Nut-zungskontextes erweitern und die Nutzungsanforderungen updaten!
 
@@ -416,7 +409,7 @@ Wie auch bei der Analyse am Ende der Konzeption ein kurzes Fazit um den Entwickl
 Text \dots
 
 \newpage
-\chapter{Implementation}
+\chapter{Implementation}\label{chapter:implementation}
 \begin{comment}
 Beschreiben Sie, wie Sie das Projekt konkret realisiert haben, mit dem Ziel, anderen (Medien-)Informatikern zu erlauben, Ihre Anwendung weiter zu entwickeln.
 
@@ -479,7 +472,7 @@ Die Abbildungen müssen im Text vorher erläutert sein und einen Eindruck geben,
 Text \dots
 
 \newpage
-\chapter{Summative Evaluation}
+\chapter{Summative Evaluation}\label{chapter:evaluation}
 \begin{comment}
 Geben Sie zu Beginn der Evaluation einen kurzen Überblick über Ihr Vorgehen. Dazu reichen meist die Zwischenüberschriften mit ein oder zwei Sätzen, was Sie konkret gemacht haben. Also nicht "In Design wird das Design beschrieben" sondern "Das experimentelle Vorgehen wird im Abschnitt Design dargestellt".
 \end{comment}
