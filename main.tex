@@ -80,6 +80,8 @@ In the context of a image-based medical diagnosis system, it is important that t
 \section{Goals}
 The users understanding of the AI model and trust in the model are highly essential as pointed out by \textcite{knapic_explainable_2021}. This holds especially true for medical applications where re-traceable results have to be provided and people acting on these results bear great responsibility. To facilitate understanding and trust the machine learning model has to be interpretable and explainable. In the context of Convolutional Neural Networks (\textbf{CNNs}) interpretability of models can pose a significant concern because of their inherent complexity. Explanations of AI-models can provide insights on the machine's decision process and therefore generate user understanding. This can lead to the model being more interpretable by humans.
 
+Assessing the suitability and performance of a CNN for a specific task by applying standard performance evaluation metrics is problematic, since these can be oblivious to distinguishing the diverse problem solving behaviors of a neural network \parencite{lapuschkin_unmasking_2019}. \textcite{samek_explaining_2021,JMLR:v17:15-618,ribeiro_anchors_2018} give an overview on the technical foundations of XAI and a presentation of practical methods, which will be used in conjunction with human-centric design to explore and evaluate suitable and efficient methods to explain a model's classification.
+
 The goal of this thesis is to design and develop and evaluate interactive AI-assessment-system artifacts for medical professionals and machine learning specialists in a human-centric fashion to facilitate understandability and trustworthiness of AI-models. Developing such a system, with human concerns in focus, leads to following research questions:
 \begin{itemize}
     \item[Q1:] How is the stakeholders' (medical professionals, clinic managements or data scientists) subjective information processing awareness linked to trust for a specific model and its predictions in the medical domain?
@@ -87,8 +89,6 @@ The goal of this thesis is to design and develop and evaluate interactive AI-ass
     \item[Q3:] What are the most efficient methods to explain and possibly optimize trust levels in image classification models?
     \item[Q4:] To what extend can structured metadata increase the stakeholder's understanding of a model's operational range and performance?
 \end{itemize}
-
-Assessing the suitability and performance of a CNN for a specific task by applying standard performance evaluation metrics is problematic, since these can be oblivious to distinguishing the diverse problem solving behaviors of a neural network \parencite{lapuschkin_unmasking_2019}. \textcite{samek_explaining_2021,JMLR:v17:15-618,ribeiro_anchors_2018} give an overview on the technical foundations of XAI and a presentation of practical methods, which will be used in conjunction with human-centric design to explore and evaluate suitable and efficient methods to explain a model classification by studying different alternatives ranging from perturbation based approaches to more explorative alternatives.
 
 \section{State of the Art}
 An AI-assessment-system is currently offered by Clearbox AI. The \textit{AI Control Room} cloud platform enables users to assess, improve and validate ML models and data in accordance with the principles of Trustworthy AI \parencite{clearbox_website,eu_trustworthy_ai}. \textcite{clearbox_website} describes its AI-assessment-system as a "Deep Pre‑production Analysis" tool:
