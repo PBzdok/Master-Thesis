@@ -184,19 +184,35 @@ This general research yielded already good results, as there were many relativel
 The results of the internet research were then further reinforced by academic partners from the University of Lübeck, with whom related research was conducted in the context of the \textit{CoCoAI} project. Leveraging the available resources and support from research partners boosted the yield on relevant scientific literature tenfold. Over the course of multiple months the list of literature grew and is still being maintained in a shared \textit{Zotero} library \parencite{Zotero_website}.
 
 \subsection{Interviews}
-Complementing the general research on XAI, specially elaborated user interviews where conducted. These interviews specifically target the user groups of medical professionals and data scientists. Interviews with the actual user group of a potential solution is fundamental to understanding and setting the context and requirements of use. The people for the interviews were chosen with following requirements in mind:
+Complementing the general research on XAI, specially elaborated user interviews where conducted. These interviews specifically target medical professionals and data scientists. Interviews with the actual user group of a potential solution is fundamental to understanding and setting the context and requirements of use. The participants for the interviews were chosen with following requirements in mind:
 \begin{description}
-    \item[Medical Professionals:] Interest in and/or knowledge in AI-systems; Has worked with or researched AI-systems in the medical domain; Can judge the benefits and risks of the use of AI in medical applications.
+    \item[Medical Professionals:] Interest and/or knowledge in AI-systems; Has worked with or researched AI-systems in the medical domain; Can judge the benefits and risks of the use of AI in medical applications.
     \item[Data Scientists / AI Researchers:] If familiar with the XAI topic; Is interest in explainability and trustworthiness of machine learning models; Has worked with AI in the medical context. 
 \end{description}
-Participants for the interviews were gathered via academic partners, internet research and word of mouth. In total 16 suitable people from 6 different institutions (among them UKSH, TU München and Mevis Frauenhofer Bremen) were contacted about potential interviews. 10 leads were medical professionals while 6 leads where data scientists or AI researchers. From the total of 16 potential interview partners only 4 interviews have been conducted. This low yield is due to the time constraint of the individuals, who are mainly full time medical practitioners and researchers.
+Participants for the interviews were gathered via academic partners, internet research and word of mouth. In total 16 suitable people from 6 different institutions (among them UKSH, TU München and Mevis Frauenhofer Bremen) were contacted about potential interviews. Ten leads were medical professionals while six leads where data scientists or AI researchers. From the total of 16 potential interview partners only four interviews have been conducted. This low yield is due to the time constraint of the individuals, who are mainly full time medical practitioners or researchers. The participants are described in further detail in \autoref{table:interview_participants}.
 
-The Interviews were conducted in german and executed as 1 to 1 online interviews. For reference the interviews were recorded if consent was present. Additionally the interviews were supported by a research colleague, who kept protocol. After the interviews the recordings were transcribed for further analysis.
-
-In terms of content, the questionnaires for medical professionals and data scientists were slightly different as seen in \autoref{table:interview_topics}. The reason for this is the difference in expertise on the subject area of machine learning models and potential user requirements. The whole interview guideline can be found in \autoref{appendix:interview_guideline}.
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{ l l }
+    \begin{tabularx}{\textwidth}{ l l l X X l }
+        \toprule
+        ID & Age & Gender & Occupation & Education Level & AAII Score \\
+        \midrule
+        1 & 28 & male & Assistant Physician in Neuroradiology & State Examination & 4.89 \\ 
+        2 & 24 & female & Research Associate (ML) & Masters Degree & 5.12 \\ 
+        3 & 48 & male & Surgeon & Dr. med. & 5.45 \\ 
+        4 & 27 & female & Assistant Physician in Neuroradiology & State Examination & 4.67 \\ 
+        \bottomrule
+    \end{tabularx}
+    \caption{Interview Participants}
+    \label{table:interview_participants}
+\end{table}
+
+The Interviews were conducted in german and executed as 1 to 1 online interviews. For reference the interviews were recorded if consent was present. Additionally the interviews were supported by a research colleague, who kept protocol. After the interviews the recordings were transcribed for further analysis and the participants were asked to answer the \textit{Affinity for AI Interaction} questionnaire, which is a modified version of the \textit{Affinity for Technology Interaction} questionnaire \parencite{franke_personal_2019}, which aims to determine the tendency to actively engage in intensive technology interaction, as a key personal resource for coping with technology.
+
+In terms of content, the interviews for medical professionals and data scientists were slightly different as seen in \autoref{table:interview_topics}. The reason for this is the heterogenous expertise on the subject area of machine learning models and potential user requirements. The whole interview guideline can be found in \autoref{appendix:interview_guideline}.
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ l l }
         \toprule
         Medical Professionals & Data Scientists / AI researchers \\
         \midrule
@@ -213,10 +229,19 @@ In terms of content, the questionnaires for medical professionals and data scien
          & Trust-Behavior Connection \\
          & Reliability vs. Trust vs. Understanding \\
         \bottomrule
-    \end{tabular}
+    \end{tabularx}
     \caption{Interview Topics}
     \label{table:interview_topics}
 \end{table}
+
+After gathering the interview data via protocols and transcripts a thematic analysis according to \textcite{braun_thematical_2006} was applied to identify common topics and codes. The thematic analysis is a widely used qualitative analysis method mainly found in the field of psychology and can be used as a primary tool to access data from interviews. Applying this method resulted in a thematic map showcasing common overlapping codes found in the interviews. \autoref{fig:thematic_mind_map} showcases the grouped codes (leafs) which highlight important topics found in many of the interviews. These codes serve as the baseline for further context and requirement analysis.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.8\textwidth, angle=90]{img/figures/Thematic_Mind_Map.pdf}
+    \caption{Thematic Mind Map}
+    \label{fig:thematic_mind_map}
+\end{figure}
 
 \subsection{Existing Applications}
 
