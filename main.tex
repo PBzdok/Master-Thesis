@@ -90,7 +90,7 @@ The goal of this thesis is to design, develop and evaluate interactive AI-assess
     \item[Q4:] To what extend can structured metadata increase the stakeholder's understanding of a model's operational range and performance?
 \end{itemize}
 
-\section{State of the Art}
+\section{State of the Art}\label{section:state_of_the_art}
 An AI-assessment-system is currently offered by Clearbox AI. The \textit{AI Control Room} cloud platform enables users to assess, improve and validate ML models and data in accordance with the principles of Trustworthy AI \parencite{clearbox_website,eu_trustworthy_ai}. \textcite{clearbox_website} describes its AI-assessment-system as a "Deep Pre‑production Analysis" tool:
 \begin{displayquote}
     "AI Control Room automatically generates a model assessment to help model owners to identify robustness issues, potential undesired behaviour, and explain errors and uncertainties regarding the model predictions."
@@ -179,9 +179,9 @@ Literature is the foundation of the analysis. As described by \textcite{mueller_
     \item Explaining Black-Box Machine Learning Models
     \item Explaining DNNs
 \end{itemize}
-This general research yielded already good results, as there were many relatively new and popular publications on the topic of XAI, such as \textcite{mueller_explanation_2019, ras_explanation_2018, adadi_blackbox_2018}.
+This general research yielded already good results, as there were many relatively new and popular publications on the topic of XAI, such as \textcite{mueller_explanation_2019, ras_explanation_2018, adadi_blackbox_2018, hoffman_metrics_2019}.
 
-The results of the internet research were then further reinforced by academic partners from the University of Lübeck, with whom related research was conducted in the context of the \textit{CoCoAI} project. Leveraging the available resources and support from research partners boosted the yield on relevant scientific literature tenfold. Over the course of multiple months the list of literature grew and is still being maintained in a shared \textit{Zotero} library \parencite{Zotero_website}. The most important scientific papers for this analysis were: \textcite{ras_explanation_2018, arrieta_explainable_2019, ribeiro_why_2016, adadi_blackbox_2018,knapic_explainable_2021, samek_explaining_2021, chiou_trusting_2021}. 
+The results of the internet research were then further reinforced by academic partners from the University of Lübeck, with whom related research was conducted in the context of the \textit{CoCoAI} project. Leveraging the available resources and support from research partners boosted the yield on relevant scientific literature tenfold. Over the course of multiple months the list of literature grew and is still being maintained in a shared \textit{Zotero} library \parencite{zotero_website}. The most important scientific papers for this analysis were: \textcite{ras_explanation_2018, arrieta_explainable_2019, ribeiro_why_2016, adadi_blackbox_2018,knapic_explainable_2021, samek_explaining_2021, chiou_trusting_2021, hoffman_metrics_2019}. 
 
 \subsection{Interviews}
 Complementing the general research on XAI, specially elaborated user interviews where conducted. These interviews specifically target medical professionals and data scientists. Interviews with the actual user group of a potential solution is fundamental to understanding and setting the context and requirements of use. The participants for the interviews were chosen with following requirements in mind:
@@ -234,7 +234,7 @@ In terms of content, the interviews for medical professionals and data scientist
     \label{table:interview_topics}
 \end{table}
 
-After gathering the interview data via protocols and transcripts a thematic analysis according to \textcite{braun_thematical_2006} was applied to identify common topics and codes. The thematic analysis is a widely used qualitative analysis method mainly found in the field of psychology and can be used as a primary tool to access data from interviews. Applying this method resulted in a thematic map showcasing common overlapping topics found in the interviews, which can be seen in \autoref{fig:thematic_mind_map}. thematic map serves as the baseline for further context and requirement analysis.
+After gathering the interview data via protocols and transcripts a thematic analysis according to \textcite{braun_thematical_2006} was applied to identify common topics and codes. The thematic analysis is a widely used qualitative analysis method mainly found in the field of psychology and can be used as a primary tool to access data from interviews. Applying this method resulted in a thematic map showcasing common overlapping topics found in the interviews, which can be seen in \autoref{fig:thematic_mind_map}. The thematic map serves as the baseline for further context and requirement analysis.
 
 \begin{figure}[htbp]
     \centering
@@ -244,15 +244,26 @@ After gathering the interview data via protocols and transcripts a thematic anal
 \end{figure}
 
 \subsection{Existing Applications}
+A scientific cooperation with Clearbox AI allowed us to access a additional source of information, valuable for the analysis and conception. As already described in \autoref{section:state_of_the_art} Clearbox developed an AI model assessment solution among other things. During the period of cooperation regular meetings were held with the CTO and other employees. These meetings were used for knowledge exchange on the subject of XAI literature, previous experiences, feedback and conceptional workshops.
+
+The enormous previous experience of Clearbox is a great resource of information for the thesis. Many aspects of analysis and conception were supported by the regular, bi-weekly meetings. In particular, resources such as \textcite{people_ai_google_website, captum_website,streamlit_website, lapuschkin_unmasking_2019} were supplied by Clearbox. Furthermore the (beta) access to the Clearbox AI \textit{Control Room} cloud platform and the communication of user feedback was invaluable to gather information on the analysis and conception of an assessment system for image-based AI models.
 
 \section{Context Analysis}
-\begin{comment}
-Der Kontext bezieht sich auf den \textbf{räumlichen} und \textbf{zeitlichen Kontext}, in dem Ihre Entwicklung eingesetzt wird (z. B. \textbf{Informations-Website:} auf Desktop-Computern, Notebooks und Mobilgeräten sowohl zu Hause als auch unterwegs und zu jeder Uhrzeit vs. S\textbf{achbearbeitungssoftware in der öffentlichen Verwaltung:} auf Arbeitsplatz-Computern, im Büro, zwischen 9 und 17 Uhr) Aus diesen Kontexten ergeben sich unterschiedliche Nutzungsanforderungen, die für die Konzeption relevant sind. Beziehen Sie diese Informationen bei der weiteren Entwicklung explizit mit ein.
+Black-box DNNs have become pervasive in todays society and represent a proven and indispensible machine learning tool. While these machine learning models can easily be used in recreational non-risky contexts, this does not hold true for the medical domain where decisions based on the results of a machine learning model can bear great risks for users and patients. This issue stems from the lack of interpretability and trustworthiness of DNNs \parencite{adadi_blackbox_2018}. DNNs architectures are inherently hard to understand and therefore interpretability of and trust in the results of such neural networks are a challenge.
 
-Wenn Sie Aussagen über den Kontext machen, dann legen Sie auch Ihre Quellen offen — woher wissen Sie das? Z. B. aus Interviews, der Literatur, etc.
-\end{comment}
+Creating a solution to explain AI models a priori to the use can help setting the right expectations in the AI model. Consequently the users of such a explanatory system gain the ability to build a fair mental model before using the AI, which in turn can support the formation of appropriate levels of trust \parencite{hoffman_metrics_2019}. This is beneficial to the user and facilitates efficient usage of the model in production \parencite{hoffman_metrics_2019, people_ai_google_website}.
 
-Text \dots
+Explaining the model a priori also enables the solution to build computationally complex explanations, which can depend on datasets of thousands of images. Supplying the user with explanations potentially based on the whole dataset can also be beneficial: Statistical analysis and clustering of the data and metadata can support the understanding of model limitations and edge cases, while exemplary local explanations can be statistically distributed to gain a better overview of global behavior of the model. Combining different layers of a priori explanations improve the coverage of the key attributes of explanations - understandability, feeling of satisfaction, sufficiency of detail, completeness, usefulness, accuracy, and trustworthiness - which were described by \textcite{hoffman_metrics_2019}.
+
+The aspects mentioned above are also reflected in the interview data. The following list showcases translated quotes from interview partners regarding the need for (a priori) explanations for AI models aimed at the medical domain:
+\begin{itemize}
+    \item "I think you have to be critical and look at the results carefully - is the result at all plausible?"
+    \item "What is the information that is interesting for the system or that is decisive for the decisions? What information is rather irrelevant?"
+    \item "If the explanations for the model are based on any data that are meaningless from my clinical experience, such as a stroke being pinned down by bone shapes. That would shake my confidence in the machine, even though it might give reliable results."
+    \item "If, for example, there is an outlier data point in a specific case and you are not quite sure why it is like this or how you should interpret it, then something like this [local explanation] is great, so that you can understand why the result is like this or like this."
+    \item "I've always been interested in exactly how this works, how much training data it's based on, what's behind it, why the system decides the way it does."
+    \item "[...] and you might also learn what the machine pays attention to, which I personally could also pay attention to when I look at the picture. That would certainly strengthen my confidence in the application."
+\end{itemize}
 
 \section{Problem Analysis}
 \begin{comment}
