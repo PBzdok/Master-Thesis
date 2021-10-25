@@ -156,13 +156,9 @@ The thesis' structure will reflect the human-centered approach, which is visuali
 
 \newpage
 \chapter{Analysis}\label{chapter:analysis}
-\begin{comment}
-    \textbf{Context => Problem / Task => User => Organisational:} "Black-box DNNs have become pervasive in todays society and represent a proven and indispencible machine learning tool. Such models for image classification are able to detect various disease patterns with medical imaging and can be used by medical professionals support diagnosis and increase efficiency and effectivity if trusted and used correctly. Medical professionals with low expertise in machine learning need to be enabled to assess ML applications before using it on patients to build trust and facilitate good results."
-\end{comment}
-
 Following the human-centered design process, it is important to incorporate the potential users from the beginning. This is also reflected in the analysis, where the context and setting of use has to be understood and set. Besides the human factors, there are also more general and theoretical aspects to be analysed, such as the context of AI in the medical application domain for specific tasks, such as classifying disease patterns with medical imaging.
 
-In the following the different aspects to be analysed will be layed out and described as a foundation for the human-centered design process and the conception of system artifacts.
+In the following the context, task, problem and users will be described and analysed as a foundation for the human-centered design process and the following conception of AI assessment system artifacts.
 
 \section{Data Sources}
 Three main data sources where used for the analysis, ranging from general scientific literature about XAI to specially elaborated user interviews and cooperation with developers of an existing application.
@@ -184,7 +180,7 @@ This general research yielded already good results, as there were many relativel
 The results of the internet research were then further reinforced by academic partners from the University of Lübeck, with whom related research was conducted in the context of the \textit{CoCoAI} project. Leveraging the available resources and support from research partners boosted the yield on relevant scientific literature tenfold. Over the course of multiple months the list of literature grew and is still being maintained in a shared \textit{Zotero} library \parencite{zotero_website}. The most important scientific papers for this analysis were: \textcite{ras_explanation_2018, arrieta_explainable_2019, ribeiro_why_2016, adadi_blackbox_2018,knapic_explainable_2021, samek_explaining_2021, chiou_trusting_2021, hoffman_metrics_2019}. 
 
 \subsection{Interviews}
-Complementing the general research on XAI, specially elaborated user interviews where conducted. These interviews specifically target medical professionals and data scientists. Interviews with the actual user group of a potential solution is fundamental to understanding and setting the context and requirements of use. The participants for the interviews were chosen with following requirements in mind:
+Complementing the general research on XAI, specially elaborated user interviews where conducted. These interviews specifically target medical professionals and data scientists. Interviews with the actual user group of a potential solution is key to understanding and setting the context and requirements of use. The participants for the interviews were chosen with following requirements in mind:
 \begin{description}
     \item[Medical Professionals:] Has interest and/or knowledge in AI-systems; has worked with or researched AI-systems in the medical domain; can judge the benefits and risks of the use of AI in medical applications.
     \item[Data Scientists / AI Researchers:] Is familiar with the XAI topic; has interest in explainability and trustworthiness of machine learning models; has worked with AI in the medical context.
@@ -276,16 +272,9 @@ The aspects mentioned above are also reflected in the interview data. The follow
 \end{displayquote}
 
 \section{Problem and Task Analysis}
-\begin{comment}
-    Problem- und Aufgabenanalyse wird häufig kombiniert, können aber auch in zwei separate Unterkapitel aufgeteilt werden.
+The following problem scenario summarizes the starting point of the problem and task analysis: The general medical practitioner Dr. med. Mustermann wants to offer thrombosis diagnosis in his office. He is not specialized in vein examination and thus has just basic knowledge and also no necessary equipment. In the past this has lead to him referring patients with venous disorders to a specialized clinic. Through a colleague he was made aware of "\textit{AutoDVT}", a AI-based software developed by ThinkSono, which can help him offer DVT diagnosis in his office. The AutoDVT system works with image-based machine learning and can support medical professionals in real time with identifying DVT. Since Dr. med. Mustermann has very little knowledge of AI and machine learning he is very skeptical towards this innovative but foreign software system. Although he sees the immediate benefits of using a system which supports him with the examination of DVT, his trust in the system’s predictions is very low and he fears relying on the AI’s assessment. AI-based technology is a black box for him, which he does not fully understand. The predictions of the systems are opaque to him and thus lead to rejection of the system.
 
-    \textbf{Problemanalyse:} Welche(s) Problem(e) adressieren Sie? Machen Sie es konkret. Verwenden Sie empirische Daten, z. B. über die Häufigkeit des Problems. Machen Sie es plastisch mit einem typischen Szenario. Weisen Sie in der weiteren Arbeit explizit darauf hin, wie Ihre Entwicklung diese Probleme adressiert.
-\end{comment}
-\begin{comment}
-    \textbf{Aufgabenanalyse:} Welche Aufgaben sollen die Benutzer/innen (besser) ausführen können? Wodurch sind diese gekennzeichnet? Bei kleineren klar definierten Aufgaben bieten sich z. B. HTAs an. Nehmen Sie in der weiteren Arbeit explizit Bezug auf die Aufgaben und die durch die Entwicklung neu vorhandenen Möglichkeiten bzw. bessere Durchführung.
-\end{comment}
-
-DNNs for image classification are able to detect various disease patterns with medical imaging and can be used by medical professionals to support diagnosis and possibly increase efficiency and effectivity if trusted and used correctly \parencite{adadi_blackbox_2018,knapic_explainable_2021}. However, the reality looks different: Medical professionals bear the responsibility for their decisions regarding the patient and thus are rather relucant about using AI based systems - even though the AI could outperform them. Most of the time decisions are based on personal experience, which was developed over a long period of time. This sentiment is reflected in the interview statements of medical professionals:
+DNNs for image classification are able to detect various disease patterns with medical imaging and can be used by medical professionals to support diagnosis and possibly increase efficiency and effectivity if trusted and used correctly \parencite{adadi_blackbox_2018,knapic_explainable_2021}. However, the reality looks different: Medical professionals bear the responsibility for their decisions regarding the patient and thus are rather relucant about using AI based systems - even though the AI could outperform them in image classification tasks. Most of the time decisions are based on personal experience, which was developed over a long period of time. This sentiment is reflected in the interview statements of medical professionals:
 \begin{displayquote}
     "One risk, I believe, is also that you hand over responsibility to the machine."
 \end{displayquote}
@@ -295,6 +284,19 @@ DNNs for image classification are able to detect various disease patterns with m
 \begin{displayquote}
     "The doctor with his expert knowledge will always compare this with his knowledge and experience, is this correct, what is the probability, is this in the range?"
 \end{displayquote}
+
+Modern DNN based image classificators, such as the \texttt{XRV\--DenseNet121\--densenet121\--res224\--all} model from \textcite{cohen_limits_2020}, can provide very good results in the prediction of pathologies. For example, the prediction accuracy for pneumonia is benchmarked as 86\% \parencite{torchxrayvision_github}. The use of such model or comparitive ones could benefit medical professionals in many ways as described by the interview partners:
+\begin{displayquote}
+    "It [AI system] facilitates standardized findings in particular"
+\end{displayquote}
+\begin{displayquote}
+    "It [AI system] might give you a little peace of mind that you haven't missed anything."
+\end{displayquote}
+\begin{displayquote}
+    "I always think to myself that this is based on CT gray levels, i.e. on these density values, and I always think to myself that it makes sense that a computer can distinguish these density levels better than my eyes."
+\end{displayquote}
+
+The benefits of using a DNN based image classificator to support medical professionals in detection and diagnosis of diseases are clear. For users to leverage these benefits trust in such a system must be given, which cannot be generated by mere accuracy metrics \parencite{samek_explaining_2021}. To overcome the hesitation of using AI in medical applications, a AI assessment system can be used to facilitate understanding of and trust in the algorithms. Stakeholders, such as practitioners or clinic managements, can use such a system to gain customized insights into the model and data prior to using it in everyday clinical practice.
 
 \section{User Analysis}
 \begin{comment}
