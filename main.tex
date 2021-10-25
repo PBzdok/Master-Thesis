@@ -251,35 +251,50 @@ The enormous previous experience of Clearbox is a great resource of information 
 \section{Context Analysis}
 Black-box DNNs have become pervasive in todays society and represent a proven and indispensible machine learning tool. While these machine learning models can easily be used in recreational non-risky contexts, this does not hold true for the medical domain where decisions based on the results of a machine learning model can bear great risks for users and patients. This issue stems from the lack of interpretability and trustworthiness of DNNs \parencite{adadi_blackbox_2018}. DNNs architectures are inherently hard to understand and therefore interpretability of and trust in the results of such neural networks are a challenge.
 
-Creating a solution to explain AI models a priori to the use can help setting the right expectations in the AI model. Consequently the users of such a explanatory system gain the ability to build a fair mental model before using the AI, which in turn can support the formation of appropriate levels of trust \parencite{hoffman_metrics_2019}. This is beneficial to the user and facilitates efficient usage of the model in production \parencite{hoffman_metrics_2019, people_ai_google_website}.
+Creating a solution to explain AI models a priori to the use can help setting the right expectations towards the AI model. Consequently the users of such a explanatory system gain the ability to build a fair mental model before using the AI, which in turn can support the formation of appropriate levels of trust \parencite{hoffman_metrics_2019}. This is beneficial to the user and facilitates efficient usage of the model in production \parencite{hoffman_metrics_2019, people_ai_google_website}.
 
-Explaining the model a priori also enables the solution to build computationally complex explanations, which can depend on datasets of thousands of images. Supplying the user with explanations potentially based on the whole dataset can also be beneficial: Statistical analysis and clustering of the data and metadata can support the understanding of model limitations and edge cases, while exemplary local explanations can be statistically distributed to gain a better overview of global behavior of the model. Combining different layers of a priori explanations improve the coverage of the key attributes of explanations - understandability, feeling of satisfaction, sufficiency of detail, completeness, usefulness, accuracy, and trustworthiness - which were described by \textcite{hoffman_metrics_2019}.
+Explaining the model a priori also enables the solution to build computationally complex explanations, which can depend on datasets of thousands of images. Supplying the user with explanations potentially based on the whole dataset can also be beneficial: Statistical analysis and clustering of the data and metadata can support the understanding of model limitations and edge cases, while exemplary local explanations can be statistically distributed to gain a better overview of global behavior of the model. Combining different types of a priori explanations improve the coverage of the key attributes of explanations - understandability, feeling of satisfaction, sufficiency of detail, completeness, usefulness, accuracy, and trustworthiness - which were described by \textcite{hoffman_metrics_2019}.
 
 The aspects mentioned above are also reflected in the interview data. The following list showcases translated quotes from interview partners regarding the need for (a priori) explanations for AI models aimed at the medical domain:
-\begin{itemize}
-    \item "I think you have to be critical and look at the results carefully - is the result at all plausible?"
-    \item "What is the information that is interesting for the system or that is decisive for the decisions? What information is rather irrelevant?"
-    \item "If the explanations for the model are based on any data that are meaningless from my clinical experience, such as a stroke being pinned down by bone shapes. That would shake my confidence in the machine, even though it might give reliable results."
-    \item "If, for example, there is an outlier data point in a specific case and you are not quite sure why it is like this or how you should interpret it, then something like this [local explanation] is great, so that you can understand why the result is like this or like this."
-    \item "I've always been interested in exactly how this works, how much training data it's based on, what's behind it, why the system decides the way it does."
-    \item "[...] and you might also learn what the machine pays attention to, which I personally could also pay attention to when I look at the picture. That would certainly strengthen my confidence in the application."
-\end{itemize}
+\begin{displayquote}
+    "I think you have to be critical and look at the results carefully - is the result at all plausible?"
+\end{displayquote}
+\begin{displayquote}
+    "What is the information that is interesting for the system or that is decisive for the decisions? What information is rather irrelevant?"
+\end{displayquote}
+\begin{displayquote}
+    "If the explanations for the model are based on any data that are meaningless from my clinical experience, such as a stroke being pinned down by bone shapes. That would shake my confidence in the machine, even though it might give reliable results."
+\end{displayquote}
+\begin{displayquote}
+    "If, for example, there is an outlier data point in a specific case and you are not quite sure why it is like this or how you should interpret it, then something like this [local explanation] is great, so that you can understand why the result is like this or like this."
+\end{displayquote}
+\begin{displayquote}
+    "I've always been interested in exactly how this works, how much training data it's based on, what's behind it, why the system decides the way it does."
+\end{displayquote}
+\begin{displayquote}
+    "[...] and you might also learn what the machine pays attention to, which I personally could also pay attention to when I look at the picture. That would certainly strengthen my confidence in the application."
+\end{displayquote}
 
-\section{Problem Analysis}
+\section{Problem and Task Analysis}
 \begin{comment}
-Problem- und Aufgabenanalyse wird häufig kombiniert, können aber auch in zwei separate Unterkapitel aufgeteilt werden.
+    Problem- und Aufgabenanalyse wird häufig kombiniert, können aber auch in zwei separate Unterkapitel aufgeteilt werden.
 
-\textbf{Problemanalyse:} Welche(s) Problem(e) adressieren Sie? Machen Sie es konkret. Verwenden Sie empirische Daten, z. B. über die Häufigkeit des Problems. Machen Sie es plastisch mit einem typischen Szenario. Weisen Sie in der weiteren Arbeit explizit darauf hin, wie Ihre Entwicklung diese Probleme adressiert.
+    \textbf{Problemanalyse:} Welche(s) Problem(e) adressieren Sie? Machen Sie es konkret. Verwenden Sie empirische Daten, z. B. über die Häufigkeit des Problems. Machen Sie es plastisch mit einem typischen Szenario. Weisen Sie in der weiteren Arbeit explizit darauf hin, wie Ihre Entwicklung diese Probleme adressiert.
+\end{comment}
+\begin{comment}
+    \textbf{Aufgabenanalyse:} Welche Aufgaben sollen die Benutzer/innen (besser) ausführen können? Wodurch sind diese gekennzeichnet? Bei kleineren klar definierten Aufgaben bieten sich z. B. HTAs an. Nehmen Sie in der weiteren Arbeit explizit Bezug auf die Aufgaben und die durch die Entwicklung neu vorhandenen Möglichkeiten bzw. bessere Durchführung.
 \end{comment}
 
-Text \dots
-
-\section{Task Analysis}
-\begin{comment}
-\textbf{Aufgabenanalyse:} Welche Aufgaben sollen die Benutzer/innen (besser) ausführen können? Wodurch sind diese gekennzeichnet? Bei kleineren klar definierten Aufgaben bieten sich z. B. HTAs an. Nehmen Sie in der weiteren Arbeit explizit Bezug auf die Aufgaben und die durch die Entwicklung neu vorhandenen Möglichkeiten bzw. bessere Durchführung.
-\end{comment}
-
-Text \dots
+DNNs for image classification are able to detect various disease patterns with medical imaging and can be used by medical professionals to support diagnosis and possibly increase efficiency and effectivity if trusted and used correctly \parencite{adadi_blackbox_2018,knapic_explainable_2021}. However, the reality looks different: Medical professionals bear the responsibility for their decisions regarding the patient and thus are rather relucant about using AI based systems - even though the AI could outperform them. Most of the time decisions are based on personal experience, which was developed over a long period of time. This sentiment is reflected in the interview statements of medical professionals:
+\begin{displayquote}
+    "One risk, I believe, is also that you hand over responsibility to the machine."
+\end{displayquote}
+\begin{displayquote}
+    "The classic risk of simply relying on what the algorithm says."
+\end{displayquote}
+\begin{displayquote}
+    "The doctor with his expert knowledge will always compare this with his knowledge and experience, is this correct, what is the probability, is this in the range?"
+\end{displayquote}
 
 \section{User Analysis}
 \begin{comment}
