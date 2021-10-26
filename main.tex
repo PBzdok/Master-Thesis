@@ -321,22 +321,9 @@ An explicit topic was the use of local explanations. The interviewee stated inte
 \end{displayquote}
 
 \section{Conclusion on the Analysis}
-\begin{comment}
-Stellen Sie zum Ende der Analyse in einem eigenen Fazit mit eigener Gewichtung die zentralen Inhalte der Analyse kurz dar. Zur Unterstützung kann eine Tabelle mit einer Priorisierung der Nutzungsanforderungen verwendet werden. Sie legen \textbf{auf Basis der Analyse} begründet fest, welche Nutzungsanforderungen:
+While the use of DNN based image classifiers for medical applications has many benefits, actual adoption is impeded by the black box character of such systems. The potential users, such as medical practitioners have trust and compliance issues. Even though the users see the immediate benefits of such AI based systems, especially in computer vision tasks, the issue with handing over responsibility to a system they do not understand prevails.
 
-\begin{enumerate}
-    \item absolut notwendig erfüllt werden müssen (müssen Sie lösen, sonst kann das Ziel der Anwendung nicht erreicht werden, d.h. sie ist nicht effektiv),
-    \item wichtig zu erfüllen sind (hoher Einfluss auf Effizienz, Zufriedenstellung, Erlernbarkeit),
-    \item was "nice-to-have" ist (geringer Einfluss auf Effizienz, Zufriedenstellung, Erlernbarkeit), und
-    \item was eher unwichtig ist, aber die Anwendung abrundet (Kür).
-\end{enumerate}
-
-Die Anforderungen mit \textbf{1 müssen} Sie erfüllen, die Anforderungen mit \textbf{2 sollten} Sie erfüllen, die Anforderungen mit \textbf{3 können} Sie erfüllen, und die mit \textbf{4 können} Sie erfüllen, wenn Sie wider erwarten am Ende der Entwicklungsphase noch was Zeit haben.
-
-Falls bei der Festlegung der Nutzungsanforderungen viel Entscheidungsspielraum vorliegt — z. B. weil die Analyse keine klaren Prioritäten nahelegt, dann können Sie die Priorisierung auch zu Beginn der Konzeption darstellen. In der Konzeption haben Sie mehr gestalterische Freiheiten als in der Analyse. Ein eigenes Fazit sollten Sie am Ende der Analyse aber in jedem Fall schreiben.
-\end{comment}
-
-Text \dots
+Insufficient standard metrics shall be supplemented with more interactive explanations with a focus on the comprehensibility of complex AI models. Promoting the formation of an appropriate mental model and therefore trust in the abilities of such systems is a key aspect which was identified by the analysis. The use of a priori explanations via an assessment system where the users can experiment with different AI models in a protected environment covers many requirements of the users: Screening the training data, exploring model strengths and limitations, analyzing visual explanations for images and doing input-output experiments. These are the core requirements for an assessment system to increase explainability and trustworthiness of AI in medical, image-based applications. Other relevant findings suggest that such an assessment system needs to actively consider the intention of the user, since it can vary greatly depending on the person's background: Medical professionals with low expertise in machine learning may need to have a more guided user experience, while experts on the subject of machine learning may prefer a more open interaction style. Furthermore it is conceivable that statistical clustering, based on (training) metadata distributions can improve the explanation satisfaction by offering a balanced access to huge datasets in a way that is not susceptible to biases.
 
 \newpage
 \chapter{Conception}\label{chapter:conception}
