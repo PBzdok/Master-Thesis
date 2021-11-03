@@ -327,49 +327,9 @@ Insufficient standard metrics shall be supplemented with more interactive explan
 
 \newpage
 \chapter{Conception}\label{chapter:conception}
-\begin{comment}
-Die \textbf{Konzeption muss klar aus der Analyse folgen}. Sie können und sollten kreative Lösungen erarbeiten, aber Sie müssen dabei wirklich kreativ sein. Sprich: \textbf{Absichtlich etwas Erschaffen, was neu und nützlich ist}. Machen Sie deutlich wie Ihre kreative Lösung die Punkte aus der Analyse aufgreift und löst. Also nicht: "Jetzt habe ich die Pflicht-Analyse gemacht, kann's abhaken, und mich frei entfalten." Die Analyse liefert die \textbf{Legobausteine} und den \textbf{Rahmen} (Bodenplatte) für die Konzeption — die müssen Sie nutzen. Sie können natürlich iterativ die ihr Verständnis des Nut-zungskontextes erweitern und die Nutzungsanforderungen updaten!
+The conception of the AI assessment system follows from the requirements specified in the analysis. Based on the thesis objectives and user needs, functionalities have been derived. Core aspects to be adopted from the analysis are interactive exploration of data, visual explanation of attribution, comparative explanations, input-output experiments and interaction guidance. Before diving into the details of functional conception (\autoref{section:functionalities}), interaction design (\autoref{section:interaction_design}), and system architecture (\autoref{section:system_architecture}), an overview of the conceptual approach (\autoref{section:conceptual_approach}) and foundational use cases (\autoref{section:use_cases}) will be given.
 
-Stellen Sie zu Beginn der Konzeption einen \textbf{Bezug zur Analyse} her. Geben Sie dann einen Überblick über das Konzeptionskapitel. Wie sind Sie bei der Konzeption vor-gegangen? Welche Aspekte (z. B. Funktionalitäten, Systemarchitektur, Interface-Design, etc.) berücksichtigen Sie? Verweise auf die Abschnitte (Abschnittsnummern verwenden!).
-
-Zentral für die Konzeption ist die \textbf{formative Evaluation der Gestaltungslösung anhand der Anforderungen}. Sie wissen ja aus der Analyse wie die Nutzungsanforderungen sind — entsprechend immer zuerst selbst die Lösungen damit bewerten (= evaluieren). Dabei helfen auch Benutzerklassen oder (wenn sinnvoll) Personas. Aber frühzeitig die Zielgruppe hinzuziehen, damit diese Ihnen Feedback zu Ihren bisherigen Konzeptionen gibt. Sie brauchen oft mehrere Iterationen bis Sie eine gebrauchstaugliche Lösung herausarbeiten können.
-
-\textbf{Zuerst "Getting the Right Design", dann erst "Get the Design Right":} Viele Arbeiten sind zu unkreativ. Das heißt nicht anders um anders sein zu wollen (wir sind nicht im Marketing), sondern etwas entwickeln, was neu und nützlich ist. Häufig wird mit der ersten Idee gestartet und diese iterativ verbessert. Das Ergebnis ist, dass man sich einen Hügel hocharbeitet (Abbildung linke Seite). Das führt zu einem "hill climbing problem" — man kommt evtl. oben an, aber übersieht, dass es andere Lösungen gibt, die einen vielleicht weiter führen (Abbildung rechte Seite).
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics{img/Picture2.png}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics{img/Picture3.png}
-    \end{subfigure}
-\end{figure}
-
-"Getting the Design Right" (links) vs. "Getting the Right Design" (rechts). Abbildungen aus \textcite{greenberg_2012}.
-
-Stattdessen erst unterschiedliche Ideen mit sehr geringen Änderungskosten (= billige und grottige Papierskizzen) explorieren, dann erst für die beste Idee entschei-den (auf Basis der Nutzungsanforderungen, Ihren Fertigkeiten und zur Verfügung stehenden Zeit)!)
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{img/Picture4.png}
-\end{figure}
-
-Abbildung aus \textcite{greenberg_2012}.
-
-Die Konzeption \textbf{kann unterschiedlich aufgebaut sein} und \textbf{nicht alle Unterkapitel sind bei jeder Entwicklung relevant}. Die Struktur muss Sinn ergeben — im Zweifelsfall mit dem Betreuer abstimmen. Die Unterkapitel Konzeptionsvorgehen, Anwendungsfälle (Use-Cases) und Funktionalitäten wird man in den meisten Fällen benötigen. \textbf{Mögliche Reihenfolgen danach sind:}
-
-\begin{itemize}
-    \item \textbf{Iterationsweise:} Bietet sich an, wenn Sie nur einen Aspekt (z. B. nur das Interface) entwickeln. Sie beschreiben in eigenen Unterkapiteln die jeweiligen Iterationen samt formativer Evaluation, aus der sich dann die nächste Iteration ableitet.
-    \item \textbf{Strukturell gegliedert:} Aufteilung in Unterkapitel (Systemarchitektur, Interface, etc.) und Beschreibung der Iterationen dieser in den jeweiligen Unterkapiteln.
-\end{itemize}
-\end{comment}
-
-Text \dots
-
-\section{Conceptual Approach}
+\section{Conceptual Approach}\label{section:conceptual_approach}
 \begin{comment}
 Die Konzeption verläuft — noch stärker als die Analyse — iterativ. Die Unterkapitel sind allerdings linear strukturiert. Vergleichbar mit den Datenquellen der Analyse bietet sich das erste Unterkapitel an, das Vorgehen und die eingesetzten Methoden zu beschreiben (deren Ergebnisse sich meist in mehreren Unterkapitel niederschlagen).
 
@@ -388,21 +348,21 @@ In den folgenden Unterkapitel können Sie dann auf 3.1 verweisen.
 
 Text \dots
 
-\section{Use Cases}
+\section{Use Cases}\label{section:use_cases}
 \begin{comment}
 Use Cases bieten sich an, die Ergebnisse aus der Analyse zusammenzufassen und in einen oder mehrere konkrete Anwendungsfälle zu übertragen. Die Tabelle mit den Nutzungsanforderungen sollte hierbei helfen. Wie sieht die Situation aus, wenn Ihr System eingesetzt wird? Bei den Anwendungsfällen noch nicht zu spezifisch werden. Es geht primär darum zu beschrieben, was die Person macht, z. B. veränderte Arbeitsabläufe, neue Funktionen, etc., noch nicht wie genau dies (technisch, womit realisiert) umgesetzt wird.
 \end{comment}
 
 Text \dots
 
-\section{Functionalities}
+\section{Functionalities}\label{section:functionalities}
 \begin{comment}
 Geben Sie einen Überblick über die geplanten Funktionalitäten des Systems. Dazu können Sie die Anwendungsfälle der Konzeption sowie die Tabelle mit den Nutzungsanforderungen aus der Analyse aufgreifen und den Anforderungen mögliche Funktionalitäten zuordnen. Priorisieren Sie dann diese Funktionalitäten — bezüglich Auswirkungen auf die Gebrauchstauglichkeit des Systems und Umsetzbarkeit dieser Funktionen.
 \end{comment}
 
 Text \dots
 
-\section{System Architecture}
+\section{System Architecture}\label{section:system_architecture}
 \begin{comment}
 Mit den Funktionalitäten gehen bestimmte Anforderungen an das zugrundeliegende System einher. Stellen Sie hier dar, welche Lösungen es für die Systemarchitektur gibt, welche Aufteilungen sich eignen (z. B. MVC) und wie man es umsetzen könnte. Je nach Detailgrad bieten sich u.a. UML-Diagramme an.
 
@@ -415,7 +375,7 @@ Mit den Funktionalitäten gehen bestimmte Anforderungen an das zugrundeliegende 
 
 Text \dots
 
-\section{Interface Design}
+\section{Interaction Design}\label{section:interaction_design}
 \begin{comment}
 Wie können die Informationen dargeboten und Angaben der Nutzer erfolgen?
 
@@ -427,6 +387,10 @@ Wie können die Informationen dargeboten und Angaben der Nutzer erfolgen?
 
 \textbf{Bei visuellen Interfaces Skizzen der Iterationen darstellen:} Benutzen Sie Graphiken (Skizzen, Mockups) um das Interface und die Interaktion damit zu verdeutlichen.
 \end{comment}
+
+Text \dots
+
+\section{Interface Design}\label{section:interface_design}
 
 Text \dots
 
