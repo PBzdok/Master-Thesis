@@ -333,18 +333,16 @@ The conception of the AI assessment system follows from the requirements specifi
 Based on \autoref{chapter:analysis} and the primary objectives the conception follows the already known design process. To begin with, building upon the previously gathered information, a functional specification was created. This specification relies heavily on the thematic analysis of the interviews, which is showcased in \autoref{fig:thematic_mind_map}. The first step of creating the functional specification was to identify common use cases for an AI assessment system which can be used by medical professionals. The specification defines formal tasks, sub-tasks and required capabilities for those use cases. The formalized functionalities were further used as the foundation for an interdependency analysis, which should highlight coactive human-computer-interaction design patterns \parencite{johnson_coactive_2014}. Having the functionalities defined and set allows for conception of interaction and interface design, accompanied by the technical system architecture. The design concepts were created in a design process that heavily referenced \textcite{people_ai_google_website} and \textcite{clearbox_website}. Having Control Room by Clearbox as a reference allowed the leveraging of their expertise and their user feedback. Furthermore an design iteration was created by conducting an expert workshop on interaction design. The results from interdependency analysis, interaction dialogues and interaction flowcharts were then realized in \autoref{chapter:implementation}.
 
 \section{Use Cases}\label{section:use_cases}
-\begin{comment}
-Use Cases bieten sich an, die Ergebnisse aus der Analyse zusammenzufassen und in einen oder mehrere konkrete Anwendungsfälle zu übertragen. Die Tabelle mit den Nutzungsanforderungen sollte hierbei helfen. Wie sieht die Situation aus, wenn Ihr System eingesetzt wird? Bei den Anwendungsfällen noch nicht zu spezifisch werden. Es geht primär darum zu beschrieben, was die Person macht, z. B. veränderte Arbeitsabläufe, neue Funktionen, etc., noch nicht wie genau dies (technisch, womit realisiert) umgesetzt wird.
-\end{comment}
+Two common use cases found throughout the user requirements are to be presented as an anchor for further conception and reference. The main difference in these use cases is the underlying user group and therefore the ultimate goal of interaction.
 
-Text \dots
+\subsection{Understanding through Interaction}
+A main use case emerges from \autoref{chapter:analysis}: Medical professionals who want to understand and trust machine learning algorithms through extensive interaction with the training data, visual explanations and comparisons before actually using the system in their daily clinical life. Medical practitioners or clinic managements are therefore enabled to form appropriate expectations and mental model of the models capabilities and performance, which helps them adopting the model and propagating knowledge and trust to professional peers and patients.
+
+\subsection{Comparison of Models}
+An additional use case can be conceived, which revolves around users with a better understanding of machine learning: The interactive comparison of different AI models to be used in the context of medical application development. Using an AI model assessment beyond standard metrics can facilitate better decisions in favor or against a specific machine learning model. The ease of use and high interactivity of such system enables specialized users to explore more intricate facets of DNNs. Combining standard metrics with data exploration, visual perturbation techniques and the ability to experiment freely with the model creates a sandbox environment for testing and comparing different machine learning models. 
 
 \section{Functionalities}\label{section:functionalities}
-\begin{comment}
-Geben Sie einen Überblick über die geplanten Funktionalitäten des Systems. Dazu können Sie die Anwendungsfälle der Konzeption sowie die Tabelle mit den Nutzungsanforderungen aus der Analyse aufgreifen und den Anforderungen mögliche Funktionalitäten zuordnen. Priorisieren Sie dann diese Funktionalitäten — bezüglich Auswirkungen auf die Gebrauchstauglichkeit des Systems und Umsetzbarkeit dieser Funktionen.
-\end{comment}
-
-Text \dots
+Interactive explanations which offer access to information about the training data and model strengths or limitations are the focus. Furthermore natural alternatives in the form of comparative explanations, as described by \textcite{cai_effects_2019}, are supplemented to the plain presentation of image data. Considering the low expertise of medical professionals in machine learning topics, general explanations of system capabilities in textual form seem beneficial. Additionally the ability to execute input-output experiments with data and the actual model were universally requested.
 
 \section{System Architecture}\label{section:system_architecture}
 \begin{comment}
