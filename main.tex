@@ -330,19 +330,52 @@ Insufficient standard metrics shall be supplemented with more interactive explan
 The conception of the AI assessment system follows from the requirements specified in the analysis. Based on the thesis objectives and user needs, functionalities have been derived. Core aspects to be adopted from the analysis are interactive exploration of data, visual explanation of attribution, comparative explanations, input-output experiments and interaction guidance. Before diving into the details of functional conception (\autoref{section:functionalities}), interaction design (\autoref{section:interaction_design}), and system architecture (\autoref{section:system_architecture}), an overview of the conceptual approach (\autoref{section:conceptual_approach}) and foundational use cases (\autoref{section:use_cases}) will be given.
 
 \section{Conceptual Approach}\label{section:conceptual_approach}
-Based on \autoref{chapter:analysis} and the primary objectives the conception follows the already known design process. To begin with, building upon the previously gathered information, a functional specification was created. This specification relies heavily on the thematic analysis of the interviews, which is showcased in \autoref{fig:thematic_mind_map}. The first step of creating the functional specification was to identify common use cases for an AI assessment system which can be used by medical professionals. The specification defines formal tasks, sub-tasks and required capabilities for those use cases. The formalized functionalities were further used as the foundation for an interdependency analysis, which should highlight coactive human-computer-interaction design patterns \parencite{johnson_coactive_2014}. Having the functionalities defined and set allows for conception of interaction and interface design, accompanied by the technical system architecture. The design concepts were created in a design process that heavily referenced \textcite{people_ai_google_website} and \textcite{clearbox_website}. Having Control Room by Clearbox as a reference allowed the leveraging of their expertise and their user feedback. Furthermore an design iteration was created by conducting an expert workshop on interaction design. The results from interdependency analysis, interaction dialogues and interaction flowcharts were then realized in \autoref{chapter:implementation}.
+Based on \autoref{chapter:analysis} and the primary objectives, the conception follows the already known design process. To begin with, building upon the previously gathered information, a functional specification was created. This specification relies heavily on the thematic analysis of the interviews, which is showcased in \autoref{fig:thematic_mind_map}. The first step of creating the functional specification was to identify common use cases for an AI assessment system which can be used by medical professionals. The specification defines formal tasks, sub-tasks and required capabilities for those use cases. The formalized functionalities were further used as the foundation for an interdependency analysis, which should highlight coactive human-computer-interaction design patterns \parencite{johnson_coactive_2014}. Having the functionalities defined and set allows for conception of interaction and interface design, accompanied by the technical system architecture. The design concepts were created in a way that heavily referenced \textcite{people_ai_google_website} and \textcite{clearbox_website}. Having Control Room by Clearbox as a close reference allowed for the leveraging of their knowledge and expertise. Furthermore a design iteration was created by conducting an expert workshop on interaction design with colleagues from Clearbox and the University of Lübeck. The results from interdependency analysis, interaction dialogues and interaction flowcharts were then realized in \autoref{chapter:implementation}.
 
 \section{Use Cases}\label{section:use_cases}
-Two common use cases found throughout the user requirements are to be presented as an anchor for further conception and reference. The main difference in these use cases is the underlying user group and therefore the ultimate goal of interaction.
+Two common use cases found throughout the user requirements are to be presented as an anchor for further conception and reference. The main difference in these use cases is the underlying user group and therefore the intention of interaction.
 
 \subsection{Understanding through Interaction}
-A main use case emerges from \autoref{chapter:analysis}: Medical professionals who want to understand and trust machine learning algorithms through extensive interaction with the training data, visual explanations and comparisons before actually using the system in their daily clinical life. Medical practitioners or clinic managements are therefore enabled to form appropriate expectations and mental model of the models capabilities and performance, which helps them adopting the model and propagating knowledge and trust to professional peers and patients.
+A main use case emerges from \autoref{chapter:analysis}: Medical professionals who want to understand and trust machine learning algorithms through extensive interaction with the training data, visual explanations and comparisons before actually using the system in their daily clinical life. Medical practitioners or clinic managements are therefore enabled to form appropriate expectations and mental model of the model's capabilities and performance, which helps them adopting the model and propagating knowledge and trust to professional peers and patients.
 
 \subsection{Comparison of Models}
-An additional use case can be conceived, which revolves around users with a better understanding of machine learning: The interactive comparison of different AI models to be used in the context of medical application development. Using an AI model assessment beyond standard metrics can facilitate better decisions in favor or against a specific machine learning model. The ease of use and high interactivity of such system enables specialized users to explore more intricate facets of DNNs. Combining standard metrics with data exploration, visual perturbation techniques and the ability to experiment freely with the model creates a sandbox environment for testing and comparing different machine learning models. 
+An additional use case can be conceived, which revolves around users with a better understanding of machine learning: The interactive comparison of different AI models to be used in the context of medical application development. Using an AI model assessment beyond standard metrics can facilitate better decisions in favor or against a specific machine learning model. The ease of use and high interactivity of such system enables specialized users to explore more intricate facets of DNNs. Combining standard metrics with data exploration, visual perturbation techniques and the ability to experiment freely with the model creates a sandbox environment for testing and comparing different machine learning models and data sets. 
 
 \section{Functionalities}\label{section:functionalities}
-Interactive explanations which offer access to information about the training data and model strengths or limitations are the focus. Furthermore natural alternatives in the form of comparative explanations, as described by \textcite{cai_effects_2019}, are supplemented to the plain presentation of image data. Considering the low expertise of medical professionals in machine learning topics, general explanations of system capabilities in textual form seem beneficial. Additionally the ability to execute input-output experiments with data and the actual model were universally requested.
+Interactive explanations which offer access to information about the training data and model strengths or limitations are the focus. Furthermore natural alternatives in the form of comparative explanations, as described by \textcite{cai_effects_2019}, are supplemented to the plain presentation of image data. Considering the low expertise of medical professionals in machine learning topics, general explanations of system capabilities in textual form are expected to be beneficial. Additionally the ability to execute input-output experiments with data and the actual model were universally requested. \autoref{table:function_specification} summarizes the specified functionalities. Furthermore these functionalities will be supplemented by visual explanation techniques. A research on different techniques yielded many possible algorithms to further explain the ML model's reasoning. The main resources for this were \textcite{adadi_blackbox_2018,samek_explaining_2021,ribeiro_anchors_2018,arrieta_explainable_2019,ras_explainable_2021}. There exists a wide selection of available visual explanation techniques for image classifiers, ranging from perturbation-based to model intrinsic methods as described by \textcite{ras_explainable_2021}. From this lot of techniques, three were found to be particularly interesting based on their features.
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ c X X }
+        \toprule
+        \# & Functionality & Description \\
+        \midrule
+        1 & Browse training data for given class & The user is able to explore the whole dataset, which was used for training of the ML model. Additionally it is possible for the user to filter the data based on classification labels. \\ 
+        2 & Show examples of false negative, false positive and low confidence & The user is able to explore training data for which the classification resulted in false negative, false positive or low classification confidence \\  
+        3 & Group data based on similarities & The user is presented with clustered training data that was algorithmically identified to be similar. \\
+        4 & Show data that is very similar to data from another class & The user is presented with comparative explanations which showcase data points that are very similar to other data points but classified differently \\
+        5 & Offer overview of general system capabilities & The user is presented with general information and metrics about the ML model in a written and structured way \\
+        6 & Show written Explanations & The user is presented with written explanations about the system by leveraging text templates \\
+        7 & Input-Output-Experiment & The user is able to feed the ML model with data and predict the models result. The model then also predicts a result, which is then compared with the user's prediction \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Functional Specification}
+    \label{table:function_specification}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ l X }
+        \toprule
+        Method & Description \\
+        \midrule
+        Occlusion of AI & Perturbation-based approach;  \\ 
+        Anchors on AI Usage & Comparison of AI Models \\  
+        Layerwise Relevance Propagation & Perspective on AI Usage \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Visual Explanation Methods}
+    \label{table:visual_explanation_methods}
+\end{table}
 
 \section{System Architecture}\label{section:system_architecture}
 \begin{comment}
