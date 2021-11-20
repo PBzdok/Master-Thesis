@@ -364,13 +364,18 @@ Interactive explanations which offer access to information about the training da
 
 \begin{table}[htbp]
     \centering
-    \begin{tabularx}{\textwidth}{ l X }
+    \begin{tabularx}{\textwidth}{ 
+            >{\hsize=.5\hsize\linewidth=\hsize}X
+            >{\hsize=.7\hsize\linewidth=\hsize}X
+            >{\hsize=1.8\hsize\linewidth=\hsize}X
+        }
         \toprule
-        Method & Description \\
+        Method & Type & Description \\
         \midrule
-        Occlusion of AI & Perturbation-based approach;  \\ 
-        Anchors on AI Usage & Comparison of AI Models \\  
-        Layerwise Relevance Propagation & Perspective on AI Usage \\
+        Occlusion & Perturbation-based & Replaces rectangular areas in input with baseline reference and computes difference in output; Most useful in models where pixels in contiguous regions are likely to be correlated \\ 
+        Anchors & Rule-based & Shows part of the input (super pixels) which are sufficient for the classifier to make the prediction; Builds on the shortcomings of LIME \parencite{ribeiro_why_2016}\\  
+        Layerwise Relevance Propagation & Model intrinsic & Propagates the prediction backwards using purposely 
+        designed local propagation rules; allows for differentiation between positive and negative influence of input pixels to prediction \\
         \bottomrule
     \end{tabularx}
     \caption{Visual Explanation Methods}
