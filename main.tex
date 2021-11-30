@@ -452,11 +452,59 @@ Using the dialogue technique allows for easy exploration of alternative informat
 These examples clearly show different ways of interacting in order to accomplish the same task: Browsing the training data. This process was applied to all tasks (and sub-tasks) from \autoref{table:interdependency_analysis_table} to gather a lot of different interaction variations, to be then used as a baseline for the following interaction flowcharts. The key takeaways from this process, was that there are various possibilities to realize an interaction. With multiple alternatives per task, some comparisons could be made: Often it seems beneficial for a streamlined interaction design, to present the user with a set of options from the beginning, instead of presenting everything and then reducing the amount of information. Furthermore situations with exhaustive searches can be avoided by presenting the user a limited amount of information. Most tasks had two to three alternatives which were compared against each other in order to find the best dialogue, which was then chosen to be the baseline for the standardized flowcharts.
 
 \subsection{Interaction Flowcharts}
-Text \dots
+Building on the previous chapters the possible human-computer-interactions were formalized into flowcharts. The type of flowchart is defined in \textit{DIN 66001} \parencite{hering_programmablaufplan_1984}. The flowcharts are essential as a reference for the implementation, as they define the details of the information flow between the two parties. The goal is to have interactions that have a clear start and end point, with no dead ends - leveraging flowcharts for this allows for an easy validation of these goals. Another goal was to separate the application into smaller, more manageable pieces, each defined by its own flowchart. \autoref{figure:flowchart_browse_data} shows a flowchart that defines the flow of interaction for the process of browsing classified images (task 1 from \autoref{table:function_specification}), with the background of the presented interaction dialogue. For each of the tasks defined in \autoref{table:function_specification} and \autoref{table:interdependency_analysis_table} such a flowchart was developed as seen in \autoref{figure:flowchart_browse_data}, \autoref{figure:flowchart_show_examples_limits}, \autoref{figure:flowchart_show_similarities}, \autoref{figure:flowchart_group_similarities}, \autoref{figure:flowchart_overview}, \autoref{figure:flowchart_written_explanations} and \autoref{figure:flowchart_experiment}. \todo{Flowcharts into appendix?}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/browse_train_data_for_chosen_class.png}
+    \caption{Flowchart - Browse Training Data for a given Class}
+    \label{figure:flowchart_browse_data}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/show_examples_limits.png}
+    \caption{Flowchart - Show Examples of false positive / negative or low confidence}
+    \label{figure:flowchart_show_examples_limits}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/show_similarities.png}
+    \caption{Flowchart - Show Similarities}
+    \label{figure:flowchart_show_similarities}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/group_data.png}
+    \caption{Flowchart - Grouping of Data based on Similarities}
+    \label{figure:flowchart_group_similarities}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/overview.png}
+    \caption{Flowchart - Overview of General System Capabilities}
+    \label{figure:flowchart_overview}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/written_explanations.png}
+    \caption{Flowchart - Show Written Explanations via Templates}
+    \label{figure:flowchart_written_explanations}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/flowcharts/experiment.png}
+    \caption{Flowchart - Input-Output Experiment}
+    \label{figure:flowchart_experiment}
+\end{figure}
 
 \section{Interface Design}\label{section:interface_design}
-
-Text \dots
+Building on the functional specification and the interaction design an interface design was developed to encompass the whole array of functionality into a single application. Similar to the flowcharts the application interface will be split up into single elements of interaction as defined by the tasks and interaction flowcharts. This separation allows for a better overview and a more flexible layout. Additionally inspiration was drawn from the state-of-the-art application from Clearbox as seen in \autoref{section:state_of_the_art}, where a similar approach was chosen. The concept of splitting the application into smaller pieces also facilitates the usability of the whole application, as the user will not be overburdened with all functionalities simultaneously. Instead the user will be able to choose which functionality he wants to utilize.
 
 \newpage
 \begin{comment}
