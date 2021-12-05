@@ -239,7 +239,7 @@ After gathering the interview data via protocols and transcripts a thematic anal
     \label{fig:thematic_mind_map}
 \end{figure}
 
-\subsection{Existing Applications}
+\subsection{Existing Applications}\label{subsection:existing_apps}
 A scientific cooperation with Clearbox AI allowed us to access a additional source of information, valuable for the analysis and conception. As already described in \autoref{section:state_of_the_art} Clearbox developed an AI model assessment solution among other things. During the period of cooperation regular meetings were held with the CTO and other employees. These meetings were used for knowledge exchange on the subject of XAI literature, previous experiences, feedback and conceptional workshops.
 
 The enormous previous experience of Clearbox is a great resource of information for the thesis. Many aspects of analysis and conception were supported by the regular, bi-weekly meetings. In particular, resources such as \textcite{people_ai_google_website, captum_website,streamlit_website, lapuschkin_unmasking_2019} were supplied by Clearbox. Furthermore the (beta) access to the Clearbox AI \textit{Control Room} cloud platform and the communication of user feedback was invaluable to gather information on the analysis and conception of an assessment system for image-based AI models.
@@ -499,31 +499,9 @@ Building on the analysis, the conception conceived possible solutions to meet th
 
 \newpage
 \chapter{Implementation}\label{chapter:implementation}
-\begin{comment}
-Beschreiben Sie, wie Sie das Projekt konkret realisiert haben, mit dem Ziel, anderen (Medien-)Informatikern zu erlauben, Ihre Anwendung weiter zu entwickeln.
+The AI assessment system will be implemented based on the insights and ideas from \autoref{chapter:conception}. Although the system to be build has to realise many tasks from the data science and machine learning domains, it also needs to provide a GUI for user interaction, as described by \autoref{section:system_architecture}. Taking these aspects into account, a \textit{Python} based implementation is preferable, as the programming language is widely used for data science and machine learning tasks, while also providing tools for GUI and web application building. Furthermore Python ranks the most popular programming language, while providing some of the most used and curated software libraries for data science and machine learning among all alternatives \parencite{toibe_index_python_website,numpy_github,pandas_github,pytorch_website}.
 
-\textbf{Test:} Sie nehmen einen Kommilitonen, geben ihm dieses Kapitel und bitten ihm eine Funktion hinzuzufügen oder zu verändern. Wenn er das kann, prima. Wenn nicht, besser schreiben oder bessere Kommilitonen suchen.
-
-Verweisen Sie zu Beginn auf die erfolgreichste Lösung aus der Konzeption. Wie in der Konzeption bieten sich Unterkapitel mit Systemarchitektur und Interface-Design an — jetzt allerdings mit konkreten Angaben, welche Programme / Frameworks Sie verwenden, und wie Sie das Interface konkret umsetzen.
-
-Geben Sie zuerst einen allgemeinen Überblick und werden dann konkreter. Als wenn Sie in eine Weltkarte reinzoomen. Erst mal sagen, wie die Welt aufgebaut ist (Kontinente), dann auf Kontinent mit Ländern zoomen, dann exemplarisch mal auf ein Land. Leser braucht ein gutes mentales Modell vom Aufbau und den Funktionen, um zu verstehen, wie es technisch umgesetzt wurde.
-
-\textbf{Begründen Sie Ihre Entscheidungen linear:} Z.B.
-
-\begin{enumerate}
-    \item "das sind die Anforderungen aus der Analyse/bisheriger Konzeption"
-    \item "Programmiersprache / System / etc. x, y, und z erfüllen diese Anforderungen"
-    \item "relevante Kriterien sind a, b, c und d (z. B. Verbreitung, Community, Weiterentwicklung, Preis)"
-    \item "Programmiersprache / System / etc. x, y, und z schneiden da so und so ab, x ist insgesamt am besten"
-    \item "Programmiersprache / System / SDK / etc. x wird verwendet". Eine Argumentation à la A => B => C => D => E ist nachvollziehbarer als wir nehmen E, weil A => C woraus D folgt, wegen B.
-\end{enumerate}
-
-Weiterer Grund: Wenn Sie zuerst die konkrete Software sagen, dann fangen Personen direkt an, die Entscheidung zu hinterfragen (weil sie z. B. eine andere bevorzugen, gibt da genug Religionskriege). Wenn Sie linear argumentieren gehen diese Personen eher bei jedem Schritt mit und enden dann bei der von Ihnen verwendeten Software (sofern sie bei den Auswahlkriterien und der Bewertung mitgehen).
-
-\textbf{Nutzen Sie den Datenträger im Anhang der Arbeit:} Insbesondere in den Programmcode können Sie viel auslagern. In der Arbeit muss der Leser aber die Struktur/den Aufbau Ihres Programms verstehen sowie die Logik dahinter. Und er muss wissen, dass es die Erläuterungen im Programmcode gibt und wo er diese findet. Entsprechend die Struktur (Dateien/Klassen) deutlichen machen und Verweise auf relevanten Dateien.
-\end{comment}
-
-Text \dots
+Referencing \autoref{subsection:existing_apps} and Clearbox, a Python based application leveraging \textit{Streamlit} will be used for implementing the AI assessment system \parencite{streamlit_website}. While there are many different possible alternatives to implement such a flexible distributed system (for example \textit{Django} or \textit{Flask}), Streamlit comes with a big advantage: The ability to directly transform Python scripts into deployment ready web applications including a GUI. This ability completely invalidates the disadvantage of building a flexible web based application, as it avoids the additional effort of implementing the communication between the presentational and the logic layer of a multi-tier application. Although strictly speaking a Streamlit-based application will not be multi-tiered in its implementation as it only consists of singular python scripts leveraging the Streamlit platform, which in turn hides most of the complexity of implementing a distributed, web based implementation. Additionally some flexibility in implementing the actual front end of the application is lost by using such a omnipotent library, as there is no need for a specialized front end technology. However it is reasonable to limit the implementation of a AI assessment system prototype in the scope of this thesis.
 
 \section{System Architecture Implementation}
 \begin{comment}
