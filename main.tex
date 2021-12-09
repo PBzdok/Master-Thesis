@@ -522,11 +522,13 @@ Referencing \autoref{subsection:existing_apps} and Clearbox, a Python based appl
 Also in this conjuncture, it makes sense to limit the implementation complexity of a AI model to be used in the assessment system. Instead of developing a own model, a pre-trained model was chosen. The model used for the implementation of the assessment system prototype is the \texttt{densenet121-res224-rsna} model from \textcite{cohen_torchxrayvision_2021}. The model is part of an open source software library called \textit{TorchXRayVision} for working with chest X-ray datasets and deep learning models. It provides a common interface and common pre-processing chain for a wide set of publicly available chest X-ray datasets. This concrete model was trained to classify X-ray images and therefore detect a pneumonia disease. Additionally the fitting and also publicly available \textit{RSNA Pneumonia Detection Challenge} dataset was used \parencite{rsna_kaggle_website}. Leveraging a pre-trained model and a curated dataset is an important aspect in the implementation of an AI assessment system, as it perfectly resembles an application scenario for the medical domain and therefore supports the implementation of the actual assessment.
 
 \section{System Architecture Implementation}
-\begin{comment}
-vgl. Konzeption, jetzt aber wie und womit es konkret umgesetzt wurde (u.U. bieten sich UML-Diagramme an)
-\end{comment}
 
-Text \dots
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/figures/architecture_implementation.png}
+    \caption{System Architecture Implementation with Streamlit}
+    \label{fig:architecture_implementation}
+\end{figure}
 
 \section{Interface Implementation}
 \begin{comment}
