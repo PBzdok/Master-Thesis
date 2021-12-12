@@ -540,20 +540,58 @@ The implementation was split up into two modules, the logic component which hand
 \end{figure}
 
 \section{Interface Implementation}\label{section:interface_implementation}
-Text \dots
+Based on the concepts of \autoref{section:interaction_design} and \autoref{section:interface_design} the interface was implemented using the tools and GUI elements of the Streamlit platform \parencite{streamlit_github}. The mainly used GUI elements were: \textit{expanders}, \textit{columns}, \textit{tables}, \textit{images}, \textit{buttons}, \textit{checkboxes} and \textit{select boxes} - all of which are readily provided.
+
+As conceived in the conception, all functionalities were implemented as differentiated GUI components by using the \textit{expander} element. \autoref{listing:overview_element} showcases the implementation of such an component, which makes use of the \textit{expander} element in combination with the \textit{columns} horizontal layout functionality. Specifying the GUI elements with Streamlit builds upon a very structured and sequential convention: Items are presented in the same order, as they are declared in the Python code (with the exception of column layouts). There are very few possibilities to specify complex layout concepts, which automatically results in a very clean and structured GUI. \autoref{fig:overview_element} shows the rendered GUI element which was specified in \autoref{listing:overview_element}. The special feature of an \textit{expander} element allows for easy hiding or showing of the encapsulated functionality. \autoref{fig:descriptive_elements} and \autoref{listing:descriptive_elements} show this exact feature: Multiple functionalities are declared successively with the \textit{expander} element, but only one item is chosen to be presented by the user by clicking on it.
+
 \begin{listing}[htpb]
     \begin{minted}{python}
-    with st.expander('Standard-Metriken'):
-        st.subheader('Standard-Metriken')
-        metrics1, metrics2, metrics3, metrics4 = st.columns(4)
-        metrics1.metric(label='Vertrauenswahrscheinlichkeit', value=str(metrics['accuracy'].round(2)))
-        metrics2.metric(label='Genauigkeit', value=str(metrics['precision'].round(2)))
-        metrics3.metric(label='Sensitivität', value=str(metrics['recall'].round(2)))
-        metrics4.metric(label='F1-Maß', value=str(metrics['f1'].round(2)))
+        with st.expander('Overview'):
+            st.subheader(f'{model_specifier}'.upper())
+            overview_l, overview_r = st.columns(2)
+            overview_l.text(f'Import Date: {datetime.date.today()}')
+            overview_r.text('Framework: Pytorch')
     \end{minted}
-    \caption{\texttt{main.py} - Metrics Element}
-    \label{lst:main.py_metrics}
+    \caption{Overview GUI Element}
+    \label{listing:overview_element}
 \end{listing}
+
+\begin{listing}[htpb]
+    \begin{minted}{python}
+        with st.expander('Overview'):
+            # [...]
+
+        with st.expander('Model Description'):
+            # [...]
+
+        with st.expander('Capabilities'):
+            # [...]
+
+        with st.expander('Standard Metrics'):
+            st.subheader('Standard Metrics')
+            metrics1, metrics2, metrics3, metrics4 = st.columns(4)
+            metrics1.metric(label='Accuracy', value=str(metrics['accuracy'].round(2)))
+            metrics2.metric(label='Precision', value=str(metrics['precision'].round(2)))
+            metrics3.metric(label='Sensitivity', value=str(metrics['recall'].round(2)))
+            metrics4.metric(label='F1', value=str(metrics['f1'].round(2)))
+    \end{minted}
+    \caption{Descriptive GUI Elements}
+    \label{listing:descriptive_elements}
+\end{listing}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/overview_element.jpg}
+    \caption{Overview GUI Element}
+    \label{fig:overview_element}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{img/screenshots/descriptive_elements.jpg}
+    \caption{Descriptive GUI Elements}
+    \label{fig:descriptive_elements}
+\end{figure}
 
 \section{Conclusion on the Implementation}
 \begin{comment}
