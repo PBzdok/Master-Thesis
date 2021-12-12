@@ -544,6 +544,8 @@ Based on the concepts of \autoref{section:interaction_design} and \autoref{secti
 
 As conceived in the conception, all functionalities were implemented as differentiated GUI components by using the \textit{expander} element. \autoref{listing:overview_element} showcases the implementation of such an component, which makes use of the \textit{expander} element in combination with the \textit{columns} horizontal layout functionality. Specifying the GUI elements with Streamlit builds upon a very structured and sequential convention: Items are presented in the same order, as they are declared in the Python code (with the exception of column layouts). There are very few possibilities to specify complex layout concepts, which automatically results in a very clean and structured GUI. \autoref{fig:overview_element} shows the rendered GUI element which was specified in \autoref{listing:overview_element}. The special feature of an \textit{expander} element allows for easy hiding or showing of the encapsulated functionality. \autoref{fig:descriptive_elements} and \autoref{listing:descriptive_elements} show this exact feature: Multiple functionalities are declared successively with the \textit{expander} element, but only one item is chosen to be presented by the user by clicking on it.
 
+\todo{Describe State Management}
+
 \begin{listing}[htpb]
     \begin{minted}{python}
         with st.expander('Overview'):
