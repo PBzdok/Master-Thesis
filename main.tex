@@ -532,7 +532,7 @@ Using the Streamlit platform implies some changes to the originally conceived sy
 
 The implementation was split up into two modules, the logic component which handles the user interaction and uses the Streamlit API and the data component which outsources some common functionality regarding data acquisition, transformation and provision. For a basic separation of concerns, these modules were split into two files, where the logic component makes use of the data component, which in turn makes use of the \textit{scikit-learn} and \textit{TorchXRayVision} libraries. Because of the heavy usage of the Streamlit platform, the total system architecture implementation is simple in comparison to a complete multi-tiered solution built on separate technological stacks.
 
-\autoref{listing:main.py_initialization} and \autoref{listing:data_module_usage} show the utilization of the \textit{TorchXRayVision} library and the interaction of the logic module with the data module to load the AI model and RSNA data set for the assessment system to use. Take note of the \python{@st.cache} annotation, which makes use of the Streamlit API to identify data that can be cached for improved performance. This is especially useful for CSV data, that is readily displayed in the GUI by the \texttt{table} element. \autoref{listing:main.py_initialization} and \autoref{listing:data_module_usage} are the foundation for the backend component, which builds on top of the AI model, loaded data and Streamlit API.
+\autoref{listing:main.py_initialization} and \autoref{listing:data_module_usage} show the utilization of the \textit{TorchXRayVision} library and the interaction of the logic module with the data module to load the AI model and RSNA data set for the assessment system to use. Take note of the \python{@st.cache} annotation, which makes use of the Streamlit API to identify data that can be cached for improved performance. This is especially useful for CSV data, that is readily displayed in the GUI. \autoref{listing:main.py_initialization} and \autoref{listing:data_module_usage} are the foundation for the backend component, which builds on top of the AI model, loaded data and Streamlit API.
 
 \begin{figure}[htbp]
     \centering
@@ -583,7 +583,7 @@ Based on the concepts of \autoref{section:interaction_design} and \autoref{secti
 
 As conceived in the conception, all functionalities were implemented as differentiated GUI components by using the \texttt{expander} element. \autoref{listing:overview_element} showcases the implementation of such an component, which makes use of the \texttt{expander} element in combination with the \texttt{columns} horizontal layout functionality. Specifying the GUI elements with Streamlit builds upon a very structured and sequential convention: Items are presented in the same order, as they are declared in the Python code (with the exception of column layouts). There are very few possibilities to specify complex layout concepts, which automatically results in a very clean and structured GUI. \autoref{fig:overview_element} shows the rendered GUI element which was specified in \autoref{listing:overview_element}. The special feature of an \texttt{expander} element allows for easy hiding or showing of the encapsulated functionality. \autoref{fig:descriptive_elements} and \autoref{listing:descriptive_elements} show this exact feature: Multiple functionalities are declared successively with the \texttt{expander} element, but only one item is chosen to be presented by the user by clicking on it.
 
-\todo{Describe State Management}
+Managing the state of the application is an important aspect, as it allows for the individualization of the user experience. This is particularly relevant for the implementation of the intention query as conceived in \autoref{section:interaction_design}. The GUI components provided by Streamlit are inherently stateful, data-driven and have a simple life cycle that refreshes on every interaction, which leads to a simple development process that is backed by the underlying data. However it is more complicated to manage state, that is not tied to specific elements and therefore exceeds the life cycle of the element. An example for this is the random choice of image samples to be displayed to the user: The random data points are sampled for each user of the application and shall only be regenerated if the user whishes to do so (see \autoref{figure:flowchart_browse_data}). Because of the simple life cycle of Streamlit GUI elements, which resets on every interaction, a separate state for some GUI elements has to be managed as seen in \autoref{listing:managing_state}. Streamlit provides a functionality to persist session state per user, which is then saved on the frontend side - this allows a interactive, stateful user experience which is backed by a common data store.
 
 \begin{listing}[htpb]
     \begin{minted}{python}
@@ -618,6 +618,20 @@ As conceived in the conception, all functionalities were implemented as differen
     \end{minted}
     \caption{Descriptive GUI Elements}
     \label{listing:descriptive_elements}
+\end{listing}
+
+\begin{listing}[htpb]
+    \begin{minted}{python}
+        def set_browse_indices(high):
+            st.session_state.indices = np.random.randint(low=0, high=high, size=10)
+        # [...]
+        if 'indices' not in st.session_state:
+            set_browse_indices(len(dataset.index))
+        index_list = st.session_state.indices
+        df_samples = dataset.loc[index_list]
+    \end{minted}
+    \caption{Managing State}
+    \label{listing:managing_state}
 \end{listing}
 
 \begin{figure}[htbp]
