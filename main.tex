@@ -649,11 +649,7 @@ Managing the state of the application is an important aspect, as it allows for t
 \end{figure}
 
 \section{Conclusion on the Implementation}
-\begin{comment}
-Kurzes Fazit, das u.a. die Frage beantwortet, was technisch konkret umgesetzt wurde und was z. B. aus der Konzeption übrig geblieben ist und warum.
-\end{comment}
-
-Text \dots
+Many of the concepts presented in \autoref{chapter:conception} were realized in the AI assessment system prototype, while some aspects grew to be differently than originally conceived, due to technical compromises. The previous chapter showcased the some important aspects of developing a flexible, multi-tier web application with the focus on the functionalities defined formerly. The technologies used for this implementation are mainly Python and the Streamlit framework, which offer a exceptionally well match for the task at hand. By leveraging the data-science oriented framework, a GUI for common web browsers could be realized directly from the Python scripts working directly on the AI model and data. The complexities of developing a distributed web application could be largely avoided by using the Streamlit platform - this also shows in the adjusted system architecture. However some flexibility in implementing the actual GUI design was lost, due to the already provided GUI elements. Instead of developing custom interactive elements with a specialized frontend technology, the prepackaged elements were used. The functionalities from \autoref{section:functionalities} could all be implemented with the exception of functionality number three. The absence of this functionality is caused by the failure to find a suitable algorithm to find commonalities in XRay images to be applied to this data set. Additionally the actual design of the GUI is also predefined by the Streamlit framework, while still maintaining clear similarities to the concept of \autoref{section:interface_design}.
 
 \newpage
 \chapter{Dialogue Samples}
