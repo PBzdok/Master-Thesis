@@ -799,25 +799,74 @@ The participants were invited individually to the study in the usability lab of 
 During the interaction the time was recorded. After the interaction the participants got to complete the second half of the questionnaire including SIPA, FOST, ESS and NASA-TLX. This marks the end of the data acquisition through the written questionnaire. After the completition, the debriefing started with the participants being asked if there were things that went not so well, that struck them or created questions. Furthermore the participants were asked if they have comments on things that they liked about the interaction or general comments. The data from the spoken debriefing was written down to complement the quantitative data. The debriefing ended a farewell.
 
 \section{Results}
-\begin{comment}
-In den Ergebnissen zeigen Sie wie die Ergebnisse analysiert wurden um Ihre Evaluationsfragen zu beantworten. Nicht einfach die Daten auflisten, sondern stellen Sie die Ergebnisse strukturiert dar und betonen Sie die wichtigen Aspekte. Gliedern Sie die Ergebnisse nach Ihren Forschungsfragen / Fragestellungen (nicht zeitlich oder nach Erhebungsmethoden wie Fragebögen vs. Beobachtung). Zu Beginn (falls relevant) sollten Sie überprüfen, ob die Anwendung auch wirklich so verwendet wurde, wie sie verwendet werden sollte (manipulation check). Haben die Personen also z. B. wirklich die Aufgaben mit der App gelöst oder haben sie die App schnell beiseite gelegt.
+The questionnaire results were digitalized and aggregated in an excel sheet to include all answers per participant (each participant got a row in the sheet identified by a pseudonym). The results per participant of each sub-questionnaire were computed by calculating the mean with regards to inverted items \parencite{schrills_sipas_2021,franke_personal_2019,franke_advancing_2015,hoffman_metrics_2019,hart_nasa-task_2006}. Each resulting mean value was appended in its own column. These results are depicted in \autoref{table:evaluation_descriptive} and form the baseline for further analysis. The descriptive statistics of \autoref{table:evaluation_descriptive} can additionally be split up by the participant's interaction group (guided vs. unguided), which is showcased in \autoref{fig:evaluation_descriptive_boxplots}, \autoref{table:evaluation_descriptive_guided} and \autoref{table:evaluation_descriptive_unguided}.
 
-Stellen Sie die Befunde / Ergebnisse von Analysen / Evaluationen / etc. immer so neutral und so objektiv wie möglich dar — ohne Ihre subjektive Interpretation oder Bewertung. Also keine Begriffe wie "lediglich", "nur", "könnte / würde / sollte / etc." oder Bewertungen wie "hat gut / nicht gut geklappt". Diese Bewertungen gehört in die Diskussion.
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ l | l l l l l l X }
+        \toprule
+        & ATI & SIPA (pre) & FOST (pre) & SIPA (post) & FOST (post) & ESS & NASA-TLX \\
+        \midrule
+        count & 14 & 14 & 14 & 14 & 14 & 14 & 14 \\
+        mean & 3.91 & 3.88 & 4.37 & 4.26 & 3.80 & 3.21 & 6.67 \\
+        std & 0.83 & 0.77 & 0.99 & 0.91 & 0.81 & 0.76 & 2.03 \\
+        min & 2.11 & 2.00 & 1.40 & 1.67 & 1.80 & 1.38 & 4.00 \\
+        25\% & 3.58 & 3.58 & 4.20 & 4.08 & 3.65 & 2.81 & 5.70 \\
+        50\% & 3.94 & 3.92 & 4.60 & 4.50 & 4.00 & 3.25 & 6.40 \\
+        75\% & 4.31 & 4.29 & 4.75 & 4.75 & 4.15 & 3.78 & 6.80 \\
+        max & 5.33 & 5.17 & 5.80 & 5.17 & 4.80 & 4.25 & 11.00 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Descriptive Statistics of all Questionnaire Results}
+    \label{table:evaluation_descriptive}
+\end{table}
 
-Überlegen Sie sich mit welchen Tabellen und Abbildungen Sie die Ergebnisse gut darstellen können. Bei aggregierten Messwerten (auf mindestens Intervallskalenniveau) immer Mittelwerte (M), Standardabweichungen (SD) und die Anzahl der Messdaten (Personen, n) angeben. Bei ordinalskalierten Daten entsprechend Median, etc. (ja, Statistik war wichtig).
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ l | l l l l l l X }
+        \toprule
+        & ATI & SIPA (pre) & FOST (pre) & SIPA (post) & FOST (post) & ESS & NASA-TLX \\
+        \midrule
+        count & 7 & 7 & 7 & 7 & 7 & 7 & 7 \\
+        mean & 3.86 & 3.67 & 3.94 & 3.82 & 3.44 & 2.73 & 6.34 \\
+        std & 0.74 & 1.01 & 1.19 & 1.06 & 0.94 & 0.70 & 1.94 \\
+        min & 2.78 & 2.00 & 1.40 & 1.67 & 1.80 & 1.38 & 4.00 \\
+        25\% & 3.50 & 3.17 & 3.90 & 3.50 & 3.00 & 2.56 & 5.50 \\
+        50\% & 3.78 & 3.83 & 4.20 & 4.50 & 4.00 & 2.75 & 6.00 \\
+        75\% & 4.17 & 4.17 & 4.60 & 4.50 & 4.00 & 3.19 & 6.60 \\
+        max & 5.11 & 5.17 & 5.00 & 4.50 & 4.20 & 3.50 & 10.20 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Descriptive Statistics of guided Questionnaire Results}
+    \label{table:evaluation_descriptive_guided}
+\end{table}
 
-Statistische Tests korrekt angeben (siehe z.B. Pallant, 2010).
+\begin{table}[htbp]
+    \centering
+    \begin{tabularx}{\textwidth}{ l | l l l l l l X }
+        \toprule
+        & ATI & SIPA (pre) & FOST (pre) & SIPA (post) & FOST (post) & ESS & NASA-TLX \\
+        \midrule
+        count & 7 & 7 & 7 & 7 & 7 & 7 & 7 \\
+        mean & 3.97 & 4.10 & 4.80 & 4.71 & 4.17 & 3.70 & 7.00 \\
+        std & 0.98 & 0.41 & 0.54 & 0.45 & 0.47 & 0.48 & 2.21 \\
+        min & 2.11 & 3.50 & 4.20 & 4.00 & 3.60 & 3.00 & 4.00 \\
+        25\% & 3.78 & 3.83 & 4.50 & 4.42 & 3.90 & 3.31 & 6.00 \\
+        50\% & 4.11 & 4.17 & 4.60 & 4.83 & 4.00 & 3.88 & 6.80 \\
+        75\% & 4.33 & 4.33 & 5.00 & 5.08 & 4.50 & 4.063 & 7.60 \\
+        max & 5.33 & 4.67 & 5.80 & 5.17 & 4.80 & 4.25 & 11.00 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Descriptive Statistics of unguided Questionnaire Results}
+    \label{table:evaluation_descriptive_unguided}
+\end{table}
 
-Pallant, J. (2007). SPSS Survival Manual (3rd ed.). Open University Press.
-
-Abbildungen müssen in sich verständlich sein (was abgebildet ist). Das heißt, die Achsen eindeutig beschriften, Skala (z.B. Likert-Skala von 1 starke Ablehnung bis 7 starke Zustimmung) in die Legende. 3D-Graphiken vermeiden — diese bieten oft keinen Mehrwert (vgl. Field, 2016).
-
-Field, A. (2016). An Adventure in Statistics. Sage.
-
-Am Ende des Ergebnis-Abschnitts muss deutlich geworden sein, wie Ihre Entwicklung von den Teilnehmenden eingesetzt wurde (hoffentlich wie geplant), was die Hauptergebnisse waren, sofern aufgrund der Stichprobengröße möglich welche Werte sich statistisch signifikant voneinander unterscheiden und was die statistischen Ergebnisse in den Variablen bedeuten (z. B. positive Korrelation zwischen A und B, dass Personen, die A besser bewertet haben auch B besser bewertet haben; aber keine Bewertung ob das gut oder schlecht ist). Falls Sie konkrete Ziele hatten (z. B. "SUS-Wert von x") dann sagen Sie, ob dieses Ziel erreicht wurde oder nicht (das ist keine Wertung, die in die Diskussion gehören würde, sondern ein größer, gleich oder kleiner was eindeutig ist).
-\end{comment}
-
-Text \dots
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/figures/boxplots.png}
+    \caption{Descriptive Statistics of Questionnaire Results, Boxplots}
+    \label{fig:evaluation_descriptive_boxplots}
+\end{figure}
 
 \section{Discussion}
 \begin{comment}
